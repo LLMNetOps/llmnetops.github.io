@@ -427,7 +427,7 @@ section {
     background: var(--white);
     border-radius: 12px;
     box-shadow: var(--shadow-md);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     overflow: hidden;
 }
 
@@ -438,16 +438,29 @@ section {
     align-items: center;
     cursor: pointer;
     background: var(--light-bg);
+    transition: var(--transition);
 }
 
 .deliverable-header:hover {
     background: var(--border-color);
 }
 
+.deliverable-header::after {
+    content: '▼';
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+    color: var(--text-color);
+}
+
+.deliverable-header.collapsed::after {
+    transform: rotate(-90deg);
+}
+
 .deliverable-title {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 1;
 }
 
 .deliverable-title h3 {
@@ -478,12 +491,17 @@ section {
 }
 
 .deliverable-content {
-    padding: 1.5rem;
-    display: none;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+    display: block;
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
-.deliverable-content.active {
-    display: block;
+.deliverable-content.collapsed {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .budget-badge {
@@ -493,6 +511,58 @@ section {
     border-radius: 50px;
     font-size: 0.875rem;
     font-weight: 600;
+}
+
+/* Key Indicators and Activity Tables */
+.key-indicators {
+    margin-bottom: 2rem;
+}
+
+.key-indicators h4 {
+    margin-bottom: 1rem;
+}
+
+.key-indicators ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-indicators li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+}
+
+.key-indicators li::before {
+    content: "📊 ";
+    margin-left: -1.5rem;
+    margin-right: 0.5rem;
+}
+
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.activity-table thead {
+    background: var(--light-bg);
+}
+
+.activity-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.activity-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.activity-table tbody tr:hover {
+    background: rgba(37, 99, 235, 0.05);
 }
 
 /* Progress Bar */

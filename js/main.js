@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initBackToTop();
     initCurrentYear();
+    initDeliverableCards();
 });
 
 // Update copyright year
@@ -14,6 +15,50 @@ function initCurrentYear() {
     const currentYear = new Date().getFullYear();
     yearElements.forEach(el => {
         el.textContent = currentYear;
+    });
+}
+
+// Initialize deliverable cards expand/collapse
+function initDeliverableCards() {
+    const cards = document.querySelectorAll('.deliverable-card');
+    
+    // Set the first card as open by default
+    if (cards.length > 0) {
+        cards[0].classList.add('open');
+    }
+    
+    // Add click handlers to all card headers
+    cards.forEach((card, index) => {
+        const header = card.querySelector('.deliverable-header');
+        const content = card.querySelector('.deliverable-content');
+        
+        if (header && content) {
+            header.addEventListener('click', function() {
+                // Close all other cards
+                cards.forEach((otherCard, otherIndex) => {
+                    if (otherIndex !== index) {
+                        otherCard.classList.remove('open');
+                        otherCard.querySelector('.deliverable-header').classList.add('collapsed');
+                        otherCard.querySelector('.deliverable-content').classList.add('collapsed');
+                    }
+                });
+                
+                // Toggle current card
+                card.classList.toggle('open');
+                header.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
+            });
+            
+            // Keep first card open by default
+            if (index === 0) {
+                card.classList.add('open');
+                header.classList.remove('collapsed');
+                content.classList.remove('collapsed');
+            } else {
+                header.classList.add('collapsed');
+                content.classList.add('collapsed');
+            }
+        }
     });
 }
 
