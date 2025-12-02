@@ -3,306 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LLMNetOps - Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI">
+    <meta name="description" content="LLMNetOps - Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI. An ISIF Asia 2025 project by Universitas Brawijaya.">
+    <meta name="keywords" content="LLM, network operations, AI, privacy, IDREN, Indonesia, locally-hosted AI, generative AI, network management">
+    <meta name="author" content="Universitas Brawijaya">
+    <meta property="og:title" content="LLMNetOps - Privacy-First AI for Network Operations">
+    <meta property="og:description" content="Building foundational AI knowledge through locally-hosted open-source LLMs for IDREN member institutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://llmnetops.github.io">
     <title>LLMNetOps - Privacy-First AI for Network Operations</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary-color: #0f172a;
-            --text-color: #334155;
-            --light-bg: #f8fafc;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--white);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--text-color);
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 8rem 2rem 6rem;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .cta-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            color: var(--text-color);
-        }
-
-        /* About Section */
-        .about {
-            background: var(--light-bg);
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Features Section */
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--secondary-color);
-        }
-
-        .feature-card p {
-            color: var(--text-color);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--secondary-color);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .contact .section-title {
-            color: var(--white);
-        }
-
-        .contact .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.6);
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                gap: 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                padding: 0.75rem 0;
-                border-bottom: 1px solid var(--light-bg);
-            }
-
-            .nav-links li:last-child {
-                border-bottom: none;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">LLMNetOps</a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <a href="index.html" class="logo">LLMNetOps</a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#goals">Goals</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="deliverables.html">Deliverables</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -310,67 +39,127 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <div class="hero-badges">
+                <span class="badge">🎓 ISIF Asia 2025</span>
+                <span class="badge">🏛️ Universitas Brawijaya</span>
+            </div>
             <h1>Strengthening Network Operations with Privacy-First AI</h1>
             <p>Building foundational AI knowledge through locally-hosted open-source LLMs, fostering peer collaboration, and empowering IDREN member institutions with privacy-aware solutions for network operations.</p>
-            <a href="#goals" class="cta-button">Explore Our Goals</a>
+            <div class="btn-group">
+                <a href="about.html" class="btn btn-primary">Learn More</a>
+                <a href="workshops.html" class="btn btn-secondary">View Workshops</a>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- About Preview Section -->
+    <section id="about-preview" class="about">
         <h2 class="section-title">About LLMNetOps</h2>
         <p class="section-subtitle">Bridging the AI Literacy Gap in Network Operations</p>
         <div class="about-content">
             <p>Many IDREN member institutions struggle to adopt AI-supported network management due to limited staff, uneven expertise, and reliance on undocumented knowledge. Generative AI offers potential for improving documentation and troubleshooting, but most administrators lack training, confidence, and tools that respect data privacy—creating an AI-literacy gap.</p>
             <br>
             <p>LLMNetOps aims to address this gap by building foundational AI knowledge, fostering peer collaboration, and promoting locally-hosted open-source LLM models as privacy-aware solutions tailored to institutional needs in network operations.</p>
+            <br>
+            <a href="about.html" class="btn btn-outline">Read More About Our Mission</a>
         </div>
     </section>
 
-    <!-- Goals Section -->
+    <!-- Key Pillars Section -->
+    <section id="pillars">
+        <h2 class="section-title">Key Pillars</h2>
+        <p class="section-subtitle">Our strategic approach to AI-enabled network operations</p>
+        <div class="card-grid">
+            <div class="card pillar-card">
+                <div class="pillar-icon">🎓</div>
+                <h3>Building Capabilities</h3>
+                <p>Developing AI literacy and technical skills among network operations professionals through structured training and hands-on workshops.</p>
+            </div>
+            <div class="card pillar-card">
+                <div class="pillar-icon">💡</div>
+                <h3>Driving Digital Innovation</h3>
+                <p>Introducing contextual AI applications specifically designed for infrastructure operations, documentation, and troubleshooting.</p>
+            </div>
+            <div class="card pillar-card">
+                <div class="pillar-icon">🚀</div>
+                <h3>Supporting Digital Transformation</h3>
+                <p>Enabling IDREN institutions to confidently adopt privacy-first AI solutions that align with their specific requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="20">20</span>
+                    <span class="stat-label">Target Participants</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2">2</span>
+                    <span class="stat-label">Workshop Sessions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">5</span>
+                    <span class="stat-label">Training Modules</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="8">8</span>
+                    <span class="stat-label">IDREN Institutions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Goals Section -->
     <section id="goals">
         <h2 class="section-title">Project Goals</h2>
         <p class="section-subtitle">Empowering institutions with privacy-first AI solutions</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">🔒</div>
                 <h3>Privacy-First AI Adoption</h3>
-                <p>Promote locally-hosted open-source LLM models as a practical solution for institutions concerned about data privacy and institutional autonomy—an issue often overlooked in AI adoption.</p>
+                <p>Promote locally-hosted open-source LLM models as a practical solution for institutions concerned about data privacy and institutional autonomy.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🖥️</div>
+            <div class="card">
+                <div class="card-icon">🖥️</div>
                 <h3>Contextual AI for Infrastructure</h3>
-                <p>Introduce the use of generative AI specifically to support technical teams in managing, understanding, and documenting their own infrastructure—not just general productivity.</p>
+                <p>Introduce the use of generative AI specifically to support technical teams in managing, understanding, and documenting their own infrastructure.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
+            <div class="card">
+                <div class="card-icon">📚</div>
                 <h3>Bridging the AI Literacy Gap</h3>
-                <p>Empower network and IT staff with the knowledge and confidence to use AI in their daily tasks, addressing the training and tool gaps that prevent AI adoption.</p>
+                <p>Empower network and IT staff with the knowledge and confidence to use AI in their daily tasks.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
                 <h3>Knowledge-Sharing Community</h3>
-                <p>Build a culture of learning and shared problem-solving through workshops and peer collaboration, rather than one-off training sessions.</p>
+                <p>Build a culture of learning and shared problem-solving through workshops and peer collaboration.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
+            <div class="card">
+                <div class="card-icon">🛡️</div>
                 <h3>Secure LLM Integration</h3>
-                <p>Investigate how locally-hosted LLMs can be safely integrated into network operations while ensuring the security of sensitive data.</p>
+                <p>Investigate how locally-hosted LLMs can be safely integrated into network operations while ensuring data security.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
                 <h3>Tailored Solutions</h3>
-                <p>Empower IDREN members to confidently assess and adopt AI solutions that align with their specific institutional requirements and constraints.</p>
+                <p>Empower IDREN members to confidently assess and adopt AI solutions that align with their specific requirements.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Interested in LLMNetOps? Connect with us!</p>
-        <div class="contact-links">
-            <a href="https://github.com/LLMNetOps" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit LLMNetOps on GitHub (opens in new tab)">
+    <!-- CTA Section -->
+    <section class="contact">
+        <h2 class="section-title">Get Involved</h2>
+        <p class="section-subtitle">Interested in LLMNetOps? Join our upcoming workshops or connect with us!</p>
+        <div class="btn-group">
+            <a href="workshops.html" class="btn btn-primary">View Workshops</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+        </div>
+        <div class="contact-links mt-4">
+            <a href="https://github.com/LLMNetOps" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit LLMNetOps on GitHub">
                 <span>GitHub</span>
             </a>
         </div>
@@ -378,7 +167,40 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 LLMNetOps. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LLMNetOps</h4>
+                <p>Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="deliverables.html">Deliverables</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Funded By</h4>
+                <p>APNIC Foundation<br>ISIF Asia 2025</p>
+            </div>
+            <div class="footer-section">
+                <h4>Implemented By</h4>
+                <p>Universitas Brawijaya<br>Indonesia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2024</span> LLMNetOps. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+{
+    "resources": [
+        {
+            "id": 1,
+            "title": "Module 1: Introduction to Large Language Models",
+            "type": "training_module",
+            "category": "Training Modules",
+            "language": "bilingual",
+            "description": "Comprehensive introduction to LLMs covering architecture, capabilities, and applications in network operations.",
+            "fileSize": "2.5 MB",
+            "format": "PDF",
+            "status": "coming_soon",
+            "downloadUrl": "#"
+        },
+        {
+            "id": 2,
+            "title": "Module 2: Privacy-Aware AI Deployment",
+            "type": "training_module",
+            "category": "Training Modules",
+            "language": "bilingual",
+            "description": "Deep dive into privacy considerations, data protection, and institutional autonomy in AI deployment.",
+            "fileSize": "3.0 MB",
+            "format": "PDF",
+            "status": "coming_soon",
+            "downloadUrl": "#"
+        },
+        {
+            "id": 3,
+            "title": "Module 3: RAG Pipelines for Network Documentation",
+            "type": "training_module",
+            "category": "Training Modules",
+            "language": "bilingual",
+            "description": "Practical guide to building Retrieval-Augmented Generation pipelines for network documentation and troubleshooting.",
+            "fileSize": "4.2 MB",
+            "format": "PDF",
+            "status": "coming_soon",
+            "downloadUrl": "#"
+        },
+        {
+            "id": 4,
+            "title": "Module 4: AI Agentic Workflows",
+            "type": "training_module",
+            "category": "Training Modules",
+            "language": "bilingual",
+            "description": "Advanced module on building AI agents for automated network operations tasks.",
+            "fileSize": "3.8 MB",
+            "format": "PDF",
+            "status": "coming_soon",
+            "downloadUrl": "#"
+        },
+        {
+            "id": 5,
+            "title": "Module 5: Infrastructure Integration",
+            "type": "training_module",
+            "category": "Training Modules",
+            "language": "bilingual",
+            "description": "Guide to integrating locally-hosted LLMs with existing network infrastructure and monitoring systems.",
+            "fileSize": "3.5 MB",
+            "format": "PDF",
+            "status": "coming_soon",
+            "downloadUrl": "#"
+        },
+        {
+            "id": 6,
+            "title": "Initial Needs Assessment Report",
+            "type": "report",
+            "category": "Reports",
+            "language": "english",
+            "description": "Survey results and analysis of AI adoption challenges across IDREN member institutions.",
+            "fileSize": "1.8 MB",
+            "format": "PDF",
+            "status": "coming_soon",
+            "downloadUrl": "#"
+        },
+        {
+            "id": 7,
+            "title": "NetOps with AI: Policy Insights for IDREN",
+            "type": "whitepaper",
+            "category": "White Papers",
+            "language": "english",
+            "description": "Comprehensive whitepaper on AI adoption policies and recommendations for network operations in educational institutions.",
+            "fileSize": "2.2 MB",
+            "format": "PDF",
+            "status": "coming_soon",
+            "downloadUrl": "#"
+        }
+    ],
+    "categories": [
+        "All",
+        "Training Modules",
+        "Case Studies",
+        "Reports",
+        "Videos",
+        "White Papers"
+    ],
+    "languages": [
+        "All",
+        "English",
+        "Indonesian",
+        "Bilingual"
+    ]
+}

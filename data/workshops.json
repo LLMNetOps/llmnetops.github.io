@@ -1,0 +1,121 @@
+{
+    "workshops": [
+        {
+            "id": 1,
+            "title": "Session 1: Foundations of Local LLM Deployment",
+            "subtitle": "Introduction to Large Language Models and Privacy-Aware AI",
+            "date": "TBA",
+            "time": "TBA",
+            "duration": "4 hours",
+            "location": "TBA",
+            "format": "Hybrid (In-person + Online)",
+            "status": "coming_soon",
+            "description": "This foundational session introduces participants to Large Language Models, covering core concepts, privacy considerations, and the fundamentals of local deployment. Participants will learn why locally-hosted LLMs are crucial for institutional data privacy.",
+            "topics": [
+                "Introduction to Large Language Models (LLMs)",
+                "Understanding AI privacy concerns",
+                "Local vs. cloud-based AI deployment",
+                "Privacy-aware AI principles",
+                "Introduction to open-source LLM models",
+                "Basic RAG (Retrieval-Augmented Generation) concepts",
+                "Infrastructure requirements overview"
+            ],
+            "prerequisites": [
+                "Basic understanding of networking concepts",
+                "Familiarity with command-line interfaces",
+                "No prior AI/ML experience required"
+            ],
+            "outcomes": [
+                "Understand core LLM concepts and terminology",
+                "Recognize privacy implications of AI deployment",
+                "Evaluate local vs. cloud AI solutions",
+                "Identify suitable open-source LLM models"
+            ],
+            "targetAudience": "Network operations staff, IT administrators, and technical team members from IDREN member institutions",
+            "materials": {
+                "language": "Bilingual (Indonesian/English)",
+                "includes": [
+                    "Presentation slides",
+                    "Hands-on exercise guides",
+                    "Reference documentation",
+                    "Setup guides"
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "title": "Session 2: AI Agentic Workflow for Network Operations",
+            "subtitle": "Practical Implementation and Hands-on Exercises",
+            "date": "TBA",
+            "time": "TBA",
+            "duration": "4 hours",
+            "location": "TBA",
+            "format": "Hybrid (In-person + Online)",
+            "status": "coming_soon",
+            "description": "Building on Session 1, this advanced session focuses on practical implementation of AI agentic workflows for network operations. Participants will work with live prototypes and learn to integrate LLMs into their network management workflows.",
+            "topics": [
+                "AI Agentic workflow fundamentals",
+                "Building RAG pipelines for network documentation",
+                "Live prototype demonstration",
+                "Contextual AI for network troubleshooting",
+                "Integration with existing infrastructure",
+                "Best practices for production deployment",
+                "Security considerations"
+            ],
+            "prerequisites": [
+                "Completion of Session 1 (or equivalent knowledge)",
+                "Basic Python knowledge (helpful but not required)",
+                "Access to a test environment"
+            ],
+            "outcomes": [
+                "Build basic RAG pipelines",
+                "Deploy LLMs for network operations use cases",
+                "Create contextual AI assistants for documentation",
+                "Implement security best practices"
+            ],
+            "targetAudience": "Participants who completed Session 1, network engineers, and IT staff ready for hands-on implementation",
+            "materials": {
+                "language": "Bilingual (Indonesian/English)",
+                "includes": [
+                    "Presentation slides",
+                    "Code repositories",
+                    "Step-by-step deployment guides",
+                    "Troubleshooting documentation"
+                ]
+            }
+        }
+    ],
+    "registrationInfo": {
+        "status": "coming_soon",
+        "fee": "Free (Funded by ISIF Asia 2025)",
+        "capacity": "20-30 participants per session",
+        "eligibility": "Network operations professionals from IDREN member institutions",
+        "certificateProvided": true
+    },
+    "faq": [
+        {
+            "question": "Who can participate in the workshops?",
+            "answer": "The workshops are primarily designed for network operations professionals, IT administrators, and technical staff from IDREN member institutions. However, we welcome participants from other educational and research institutions in Indonesia who are interested in privacy-aware AI deployment."
+        },
+        {
+            "question": "Is there a registration fee?",
+            "answer": "No, the workshops are free of charge. This project is funded by APNIC Foundation through the ISIF Asia 2025 grant program."
+        },
+        {
+            "question": "What equipment do I need?",
+            "answer": "Participants should have a laptop with at least 8GB RAM. For hands-on exercises, we'll provide access to cloud-based environments. Specific setup instructions will be shared before each workshop."
+        },
+        {
+            "question": "Will workshop materials be available afterwards?",
+            "answer": "Yes, all workshop materials including slides, recordings (when available), and hands-on guides will be made available through our Resources page. Materials are provided in both Indonesian and English."
+        },
+        {
+            "question": "What language will instruction be in?",
+            "answer": "Instruction will be primarily in Indonesian with materials available in both Indonesian and English. English support will be available for non-Indonesian speakers."
+        },
+        {
+            "question": "Do I need prior AI/ML experience?",
+            "answer": "No prior AI or machine learning experience is required for Session 1. Basic familiarity with networking concepts and command-line interfaces is helpful. Session 2 builds on Session 1 content."
+        }
+    ]
+}
