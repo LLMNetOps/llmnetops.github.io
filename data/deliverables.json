@@ -1,0 +1,156 @@
+{
+    "deliverables": [
+        {
+            "id": 1,
+            "title": "Curriculum Development",
+            "status": "not_started",
+            "budget": 10000,
+            "description": "Initial survey, curriculum design, and prototyping platform for locally-hosted LLM training materials.",
+            "pso": "A co-created curriculum on locally-hosted LLMs tailored for network operations, developed collaboratively with IDREN member institutions.",
+            "keyIndicators": [
+                "At least 8 survey responses from IDREN institutions",
+                "1 draft curriculum developed",
+                "1 demo prototype shared for feedback"
+            ],
+            "activities": [
+                {
+                    "name": "Initial Needs Assessment Survey",
+                    "description": "Distribute survey to identify technical gaps and institutional needs across IDREN members",
+                    "target": "1 report",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Curriculum Design and Development",
+                    "description": "Design comprehensive curriculum based on survey findings",
+                    "target": "1 curriculum document",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Module Development",
+                    "description": "Develop 5 training modules covering LLM fundamentals to advanced applications",
+                    "target": "5 modules",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Platform Prototyping",
+                    "description": "Build demo prototype for hands-on LLM deployment exercises",
+                    "target": "1 prototype",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Pilot Feedback Collection",
+                    "description": "Gather feedback from pilot participants to refine materials",
+                    "target": "1 feedback report",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Developing a Webpage Portal",
+                    "description": "Create web portal for hosting training resources and community engagement",
+                    "target": "1 website",
+                    "status": "in_progress"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Workshop Delivery",
+            "status": "not_started",
+            "budget": 18000,
+            "description": "Two hands-on workshop sessions focusing on LLM fundamentals and AI agentic workflows for network operations.",
+            "pso": "Hands-on workshops that train at least 20 network operations professionals from IDREN institutions on privacy-aware LLM deployment.",
+            "keyIndicators": [
+                "2 workshop sessions delivered",
+                "20+ participants trained",
+                "70% knowledge improvement demonstrated"
+            ],
+            "activities": [
+                {
+                    "name": "Workshop Planning",
+                    "description": "Develop workshop agenda, prepare materials, and coordinate logistics",
+                    "target": "Complete planning documentation",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Workshop Session 1: LLM Fundamentals",
+                    "description": "Introduction to Large Language Models, privacy-aware AI, and local deployment concepts",
+                    "target": "1 session delivered",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Workshop Session 2: AI Agentic Workflow",
+                    "description": "Hands-on training on AI agentic workflows and RAG pipelines for network operations",
+                    "target": "1 session delivered",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Workshop Documentary",
+                    "description": "Document workshop proceedings, create recordings and materials for future reference",
+                    "target": "Complete documentation",
+                    "status": "not_started"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Survey and Analysis",
+            "status": "not_started",
+            "budget": 1000,
+            "description": "Comprehensive survey, case studies, and whitepaper development to document project impact.",
+            "pso": "Research outputs including case studies and policy insights for AI adoption in network operations across IDREN.",
+            "keyIndicators": [
+                "Final survey completed",
+                "3+ case studies documented",
+                "1 whitepaper published"
+            ],
+            "activities": [
+                {
+                    "name": "Final Survey & Data Collection",
+                    "description": "Conduct comprehensive survey to measure project impact and knowledge improvement",
+                    "target": "1 survey report",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Case Brief & Testimonial Collection",
+                    "description": "Document real-world implementation examples from participating institutions",
+                    "target": "3+ case studies",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Whitepaper on NetOps with AI",
+                    "description": "Publish comprehensive whitepaper on AI adoption for network operations with policy insights",
+                    "target": "1 whitepaper",
+                    "status": "not_started"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Reporting",
+            "status": "not_started",
+            "budget": 1000,
+            "description": "Project reporting and dissemination of findings to stakeholders and funding organization.",
+            "pso": "Comprehensive project documentation and reporting to ISIF Asia and stakeholders.",
+            "keyIndicators": [
+                "Midterm report submitted",
+                "Final report completed",
+                "Findings disseminated"
+            ],
+            "activities": [
+                {
+                    "name": "Midterm Reporting",
+                    "description": "Submit progress report at project midpoint",
+                    "target": "1 midterm report",
+                    "status": "not_started"
+                },
+                {
+                    "name": "Final Report Writing & Dissemination",
+                    "description": "Complete final project report and disseminate findings",
+                    "target": "1 final report",
+                    "status": "not_started"
+                }
+            ]
+        }
+    ],
+    "totalBudget": 30000,
+    "projectProgress": 5
+}
