@@ -523,19 +523,13 @@ section {
 }
 
 .key-indicators ul {
-    list-style: none;
-    padding-left: 0;
+    list-style: disc;
+    padding-left: 1.5rem;
 }
 
 .key-indicators li {
     margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-}
-
-.key-indicators li::before {
-    content: "📊 ";
-    margin-left: -1.5rem;
-    margin-right: 0.5rem;
+    
 }
 
 .activity-table {
