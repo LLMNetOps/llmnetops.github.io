@@ -1051,3 +1051,58 @@ footer {
     color: var(--text-color);
     line-height: 1.6;
 }
+
+/* SDG Section */
+.sdg-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.sdg-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.sdg-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sdg-item {
+    text-align: center;
+    transition: var(--transition);
+}
+
+.sdg-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.sdg-item:hover img {
+    transform: scale(1.05);
+}
+
+.sdg-item h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.sdg-item p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
