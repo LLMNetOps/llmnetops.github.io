@@ -4,7 +4,7 @@
 
 
 
-<p align="center"><strong>LLMNetOps</strong>: A project for strengthening network operations knowledge-Base through locally-hosted generative AI</p>
+<p align="center"><strong>Large Language Model Network Operations</strong> is a project for strengthening network operations knowledge-base through generative AI</p>
 
 ## 🌐 Project Site
 
