@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://llmnetops.github.io/images/llmnetops-logo-formal.png" alt="LLMNetOps Logo">
+  <img src="https://llmnetops.github.io/images/llmnetops-logo-with-mascot.png" alt="LLMNetOps Logo">
 </p>
 
 
