@@ -1,8 +1,10 @@
+![LLMNetOps Logo](https://llmnetops.github.io/images/basic-logo-llmnetops.png)
+
 # LLMNetOps
 
 **Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI**
 
-## 🌐 Live Website
+## 🌐 Project Site
 
 Visit: [https://llmnetops.github.io](https://llmnetops.github.io)
 
