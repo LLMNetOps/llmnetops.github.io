@@ -55,15 +55,14 @@ llmnetops.github.io/
 
 - **Funding:** APNIC Foundation / ISIF Asia 2025
 - **Implementation:** Universitas Brawijaya, Indonesia
-- **Budget:** $30,000 USD
 - **Target:** 20+ network operations professionals from IDREN institutions
 
 ## Key Deliverables
 
-1. **Curriculum Development** ($10,000) - Training modules on locally-hosted LLMs
-2. **Workshop Delivery** ($18,000) - 2 hands-on workshop sessions
-3. **Survey and Analysis** ($1,000) - Research outputs and case studies
-4. **Reporting** ($1,000) - Project documentation and dissemination
+1. **Curriculum Development** - Training modules on locally-hosted LLMs
+2. **Workshop Delivery** - 2 hands-on workshop sessions
+3. **Survey and Analysis** - Research outputs and case studies
+4. **Reporting** - Project documentation and dissemination
 
 ## Contributing
 

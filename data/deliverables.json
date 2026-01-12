@@ -4,7 +4,6 @@
             "id": 1,
             "title": "Curriculum Development",
             "status": "not_started",
-            "budget": 10000,
             "description": "Initial survey, curriculum design, and prototyping platform for locally-hosted LLM training materials.",
             "pso": "A co-created curriculum on locally-hosted LLMs tailored for network operations, developed collaboratively with IDREN member institutions.",
             "keyIndicators": [
@@ -55,7 +54,6 @@
             "id": 2,
             "title": "Workshop Delivery",
             "status": "not_started",
-            "budget": 18000,
             "description": "Two hands-on workshop sessions focusing on LLM fundamentals and AI agentic workflows for network operations.",
             "pso": "Hands-on workshops that train at least 20 network operations professionals from IDREN institutions on privacy-aware LLM deployment.",
             "keyIndicators": [
@@ -94,7 +92,6 @@
             "id": 3,
             "title": "Survey and Analysis",
             "status": "not_started",
-            "budget": 1000,
             "description": "Comprehensive survey, case studies, and whitepaper development to document project impact.",
             "pso": "Research outputs including case studies and policy insights for AI adoption in network operations across IDREN.",
             "keyIndicators": [
@@ -127,7 +124,6 @@
             "id": 4,
             "title": "Reporting",
             "status": "not_started",
-            "budget": 1000,
             "description": "Project reporting and dissemination of findings to stakeholders and funding organization.",
             "pso": "Comprehensive project documentation and reporting to ISIF Asia and stakeholders.",
             "keyIndicators": [
@@ -151,6 +147,5 @@
             ]
         }
     ],
-    "totalBudget": 30000,
     "projectProgress": 5
 }
