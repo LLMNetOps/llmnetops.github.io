@@ -94,6 +94,13 @@ nav {
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
 }
 
 .nav-links {
