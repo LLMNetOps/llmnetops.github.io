@@ -1,8 +1,10 @@
-![LLMNetOps Logo](https://llmnetops.github.io/images/basic-logo-llmnetops.png)
+<p align="center">
+  <img src="https://llmnetops.github.io/images/basic-logo-llmnetops.png" alt="LLMNetOps Logo">
+</p>
 
-# LLMNetOps
 
-**Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI**
+
+<p align="center"><strong>LLMNetOps</strong>: A project for strengthening network operations knowledge-Base through locally-hosted generative AI</p>
 
 ## 🌐 Project Site
 
