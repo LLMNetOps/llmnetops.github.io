@@ -890,6 +890,28 @@ footer {
     opacity: 1;
 }
 
+.footer-bottom .footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.footer-bottom .footer-logos img {
+    height: 80px;
+    max-width: 150px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-bottom .footer-logos img:hover {
+    opacity: 1;
+}
+
 
 /* Page Header */
 .page-header {

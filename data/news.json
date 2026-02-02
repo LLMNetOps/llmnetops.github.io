@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "slug": "kickoff-meeting-2025",
+        "title": "LLMNetOps Kickoff Meeting Successfully Completed",
+        "date": "2026-01-27",
+        "location": "Malang, Indonesia",
+        "category": "Meeting",
+        "excerpt": "The official kickoff meeting for the LLMNetOps project was successfully held at Universitas Brawijaya on January 27, 2026, launching this 15-month initiative focused on privacy-first AI integration for network operations.",
+        "image": "images/news/kick_off_llmnetops_20260127_104510.jpg",
+        "content": "<p>The official kickoff meeting for the LLMNetOps project was successfully held at <strong>Universitas Brawijaya</strong> on <strong>January 27, 2026</strong>. The meeting was led by <strong>Dr. Achmad Basuki</strong>, who guided the team through the project's objectives and strategic direction.</p><p>The meeting brought together the project team to officially launch this 15-month initiative focused on privacy-first AI integration for network operations. The project, funded by the <strong>APNIC Foundation</strong> through <strong>ISIF Asia 2025</strong>, aims to strengthen network operations knowledge through locally-hosted generative AI across IDREN member institutions.</p><p>Learn more about the project on the <a href=\"https://apnic.foundation/projects/llmnetops/\" target=\"_blank\" rel=\"noopener\">APNIC Foundation website</a>.</p><h3>Key Discussion Topics</h3><p>During the meeting, the team discussed:</p><ul><li>Project overview and objectives</li><li>Key deliverables: Curriculum Development, Workshop Implementation, Survey & Analysis, and Reporting</li><li>Project timeline and milestones</li><li>Team roles and responsibilities</li><li>Workshop planning for IDREN participants</li></ul><h3>Looking Ahead</h3><p>The project will conduct two hands-on workshop sessions for network operations professionals from IDREN member institutions, with a focus on privacy-aware LLM usage and practical skills development.</p><p>For more information, visit: <a href=\"https://llmnetops.github.io\" target=\"_blank\">https://llmnetops.github.io</a></p>",
+        "photos": [
+            {
+                "url": "images/news/kick_off_llmnetops_20260127_104510.jpg",
+                "caption": "Project team during the kickoff meeting at Universitas Brawijaya"
+            },
+            {
+                "url": "images/news/kick_off_llmnetops_20260127_115203.jpg",
+                "caption": "Collaborative session planning the project roadmap and deliverables"
+            },
+            {
+                "url": "images/news/kick_off_llmnetops_20260127_115218.jpg",
+                "caption": "Team discussing workshop plans for IDREN participants"
+            }
+        ]
+    }
+]
