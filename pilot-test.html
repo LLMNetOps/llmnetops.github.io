@@ -9,18 +9,28 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/components.css">
     <style>
-        .material-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
-        .material-nav a { padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: 999px; color: var(--primary-color); text-decoration: none; background: var(--white); transition: var(--transition); }
-        .material-nav a:hover { background: var(--primary-color); color: var(--white); }
-        .material { margin-bottom: 3rem; scroll-margin-top: 90px; }
+        .materials-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 2rem; align-items: start; }
+        .material-tabs { display: flex; flex-direction: column; gap: 0.5rem; position: sticky; top: 100px; }
+        .material-tab { display: block; width: 100%; text-align: left; padding: 0.9rem 1rem; background: var(--white); border: 1px solid var(--border-color); border-left: 4px solid transparent; border-radius: 8px; cursor: pointer; font: inherit; color: var(--text-color); transition: var(--transition); }
+        .material-tab:hover { border-color: var(--primary-light); border-left-color: var(--primary-light); }
+        .material-tab[aria-selected="true"] { border-color: var(--primary-color); border-left-color: var(--primary-color); background: #eff6ff; box-shadow: var(--shadow-sm); }
+        .material-tab[aria-selected="true"] .material-tab-title { color: var(--primary-color); }
+        .material-tab-title { display: block; font-weight: 600; color: var(--secondary-color); }
+        .material-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; }
+        .material { scroll-margin-top: 100px; }
         .material-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1rem; margin-bottom: 1rem; }
         .material-head h3 { margin: 0; }
-        .material-label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; }
         .embed-frame { position: relative; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); background: var(--light-bg); }
         .embed-frame.slides { aspect-ratio: 16 / 9.4; }
-        .embed-frame.doc { max-width: 850px; margin: 0 auto; height: 85vh; min-height: 480px; border: 1px solid var(--border-color); background: var(--white); }
-        .btn-open { padding: 0.6rem 1.25rem; font-size: 0.95rem; }
+        .embed-frame.doc { max-width: 850px; height: 85vh; min-height: 480px; border: 1px solid var(--border-color); background: var(--white); }
         .embed-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .btn-open { padding: 0.6rem 1.25rem; font-size: 0.95rem; }
+        @media (max-width: 900px) {
+            .materials-layout { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+            .material-tabs { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 0.25rem; }
+            .material-tab { flex: 0 0 auto; width: auto; border-left-width: 1px; border-bottom: 4px solid transparent; }
+            .material-tab:hover, .material-tab[aria-selected="true"] { border-left-color: var(--primary-color); border-bottom-color: var(--primary-color); }
+        }
     </style>
 </head>
 <body>
@@ -60,23 +70,33 @@
         <p>Slides and hands-on module from the LLMNetOps pilot test on Agentic AI for network operations</p>
     </section>
 
-    <!-- Material Index -->
-    <section>
-        <div class="container">
-            <div class="material-nav" role="navigation" aria-label="Pilot test materials">
-                <a href="#intro">Introduction</a>
-                <a href="#agentic-ai">Agentic AI</a>
-                <a href="#demo">Demo</a>
-                <a href="#hands-on-demo">Hands-on Demo</a>
-                <a href="#hands-on-module">Hands-on Module</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Materials -->
     <section class="about">
-        <div class="container">
-            <div class="material" id="intro">
+        <div class="container materials-layout">
+            <div class="material-tabs" role="tablist" aria-orientation="vertical" aria-label="Pilot test materials">
+                    <button class="material-tab" role="tab" id="tab-intro" aria-controls="intro" aria-selected="false" data-target="intro">
+                        <span class="material-label">Opening</span>
+                        <span class="material-tab-title">Introduction</span>
+                    </button>
+                    <button class="material-tab" role="tab" id="tab-agentic-ai" aria-controls="agentic-ai" aria-selected="false" data-target="agentic-ai">
+                        <span class="material-label">Slide 1</span>
+                        <span class="material-tab-title">Agentic AI</span>
+                    </button>
+                    <button class="material-tab" role="tab" id="tab-demo" aria-controls="demo" aria-selected="false" data-target="demo">
+                        <span class="material-label">Slide 2</span>
+                        <span class="material-tab-title">Demo</span>
+                    </button>
+                    <button class="material-tab" role="tab" id="tab-hands-on-demo" aria-controls="hands-on-demo" aria-selected="false" data-target="hands-on-demo">
+                        <span class="material-label">Slide 3</span>
+                        <span class="material-tab-title">Hands-on Demo</span>
+                    </button>
+                    <button class="material-tab" role="tab" id="tab-hands-on-module" aria-controls="hands-on-module" aria-selected="false" data-target="hands-on-module">
+                        <span class="material-label">Module</span>
+                        <span class="material-tab-title">Hands-on Module</span>
+                    </button>
+            </div>
+            <div class="material-panels">
+            <div class="material" id="intro" role="tabpanel" aria-labelledby="tab-intro" hidden>
                 <div class="material-head">
                     <div>
                         <span class="material-label">Opening</span>
@@ -85,10 +105,10 @@
                     <a href="https://docs.google.com/presentation/d/e/2PACX-1vTWpuoTcN7CyNknXBzSK7vB1t9P1et3Al_Cq0KJ7plm8UrNmgxuMVJ35zF7j7N-Uvebbyzrig3JwuHH/pub?start=false&loop=false&delayms=3000" class="btn btn-outline btn-open" target="_blank" rel="noopener">Open Slides ↗</a>
                 </div>
                 <div class="embed-frame slides">
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTWpuoTcN7CyNknXBzSK7vB1t9P1et3Al_Cq0KJ7plm8UrNmgxuMVJ35zF7j7N-Uvebbyzrig3JwuHH/pubembed?start=false&loop=false&delayms=3000" title="Introduction" loading="lazy" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <iframe data-src="https://docs.google.com/presentation/d/e/2PACX-1vTWpuoTcN7CyNknXBzSK7vB1t9P1et3Al_Cq0KJ7plm8UrNmgxuMVJ35zF7j7N-Uvebbyzrig3JwuHH/pubembed?start=false&loop=false&delayms=3000" title="Introduction" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div class="material" id="agentic-ai">
+            <div class="material" id="agentic-ai" role="tabpanel" aria-labelledby="tab-agentic-ai" hidden>
                 <div class="material-head">
                     <div>
                         <span class="material-label">Slide 1</span>
@@ -97,10 +117,10 @@
                     <a href="https://docs.google.com/presentation/d/e/2PACX-1vT_p3MreBU5N8C5sEE9sKnEoe6d3wsnu49jqZhLHrikAxM1mCwT9FUQuUL0YkTEZrTulxOLx47VV9zA/pub?start=false&loop=false&delayms=3000" class="btn btn-outline btn-open" target="_blank" rel="noopener">Open Slides ↗</a>
                 </div>
                 <div class="embed-frame slides">
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT_p3MreBU5N8C5sEE9sKnEoe6d3wsnu49jqZhLHrikAxM1mCwT9FUQuUL0YkTEZrTulxOLx47VV9zA/pubembed?start=false&loop=false&delayms=3000" title="Agentic AI" loading="lazy" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <iframe data-src="https://docs.google.com/presentation/d/e/2PACX-1vT_p3MreBU5N8C5sEE9sKnEoe6d3wsnu49jqZhLHrikAxM1mCwT9FUQuUL0YkTEZrTulxOLx47VV9zA/pubembed?start=false&loop=false&delayms=3000" title="Agentic AI" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div class="material" id="demo">
+            <div class="material" id="demo" role="tabpanel" aria-labelledby="tab-demo" hidden>
                 <div class="material-head">
                     <div>
                         <span class="material-label">Slide 2</span>
@@ -109,10 +129,10 @@
                     <a href="https://docs.google.com/presentation/d/e/2PACX-1vTVWemti042ORkOZwM8abCT_4XxSD0PLzOm5Xxq_rSZrnmzohePRwjZA0QW53HtK5ftS73WOO2zOdRX/pub?start=false&loop=false&delayms=3000" class="btn btn-outline btn-open" target="_blank" rel="noopener">Open Slides ↗</a>
                 </div>
                 <div class="embed-frame slides">
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTVWemti042ORkOZwM8abCT_4XxSD0PLzOm5Xxq_rSZrnmzohePRwjZA0QW53HtK5ftS73WOO2zOdRX/pubembed?start=false&loop=false&delayms=3000" title="Demo" loading="lazy" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <iframe data-src="https://docs.google.com/presentation/d/e/2PACX-1vTVWemti042ORkOZwM8abCT_4XxSD0PLzOm5Xxq_rSZrnmzohePRwjZA0QW53HtK5ftS73WOO2zOdRX/pubembed?start=false&loop=false&delayms=3000" title="Demo" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div class="material" id="hands-on-demo">
+            <div class="material" id="hands-on-demo" role="tabpanel" aria-labelledby="tab-hands-on-demo" hidden>
                 <div class="material-head">
                     <div>
                         <span class="material-label">Slide 3</span>
@@ -121,10 +141,10 @@
                     <a href="https://docs.google.com/presentation/d/e/2PACX-1vR-bBp04kDfmXruulnlbtk6WsBUepJIHIcZazeaH-K_CHdv_Kn2Es-p_h9-OoY4Mg/pub?start=false&loop=false&delayms=3000" class="btn btn-outline btn-open" target="_blank" rel="noopener">Open Slides ↗</a>
                 </div>
                 <div class="embed-frame slides">
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR-bBp04kDfmXruulnlbtk6WsBUepJIHIcZazeaH-K_CHdv_Kn2Es-p_h9-OoY4Mg/pubembed?start=false&loop=false&delayms=3000" title="Hands-on Demo" loading="lazy" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <iframe data-src="https://docs.google.com/presentation/d/e/2PACX-1vR-bBp04kDfmXruulnlbtk6WsBUepJIHIcZazeaH-K_CHdv_Kn2Es-p_h9-OoY4Mg/pubembed?start=false&loop=false&delayms=3000" title="Hands-on Demo" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div class="material" id="hands-on-module">
+            <div class="material" id="hands-on-module" role="tabpanel" aria-labelledby="tab-hands-on-module" hidden>
                 <div class="material-head">
                     <div>
                         <span class="material-label">Module</span>
@@ -133,8 +153,9 @@
                     <a href="https://docs.google.com/document/d/e/2PACX-1vRjLXfoyKWDjsE9FD5dzPFKizQD1pbexSAYwXjuEySA3t73QLa7t-it0abAiPUC4w/pub" class="btn btn-outline btn-open" target="_blank" rel="noopener">Open Document ↗</a>
                 </div>
                 <div class="embed-frame doc">
-                    <iframe src="https://docs.google.com/document/d/e/2PACX-1vRjLXfoyKWDjsE9FD5dzPFKizQD1pbexSAYwXjuEySA3t73QLa7t-it0abAiPUC4w/pub?embedded=true" title="Hands-on Module" loading="lazy" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <iframe data-src="https://docs.google.com/document/d/e/2PACX-1vRjLXfoyKWDjsE9FD5dzPFKizQD1pbexSAYwXjuEySA3t73QLa7t-it0abAiPUC4w/pub?embedded=true" title="Hands-on Module" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -183,5 +204,38 @@
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        (function () {
+            var tabs = Array.prototype.slice.call(document.querySelectorAll('.material-tab'));
+            function show(id, updateHash) {
+                var tab = document.getElementById('tab-' + id) || tabs[0];
+                id = tab.getAttribute('data-target');
+                tabs.forEach(function (t) {
+                    var on = t === tab;
+                    t.setAttribute('aria-selected', on ? 'true' : 'false');
+                    t.tabIndex = on ? 0 : -1;
+                    var panel = document.getElementById(t.getAttribute('data-target'));
+                    panel.hidden = !on;
+                    if (on) {
+                        var frame = panel.querySelector('iframe[data-src]');
+                        if (frame && !frame.src) frame.src = frame.getAttribute('data-src');
+                    }
+                });
+                if (updateHash) history.replaceState(null, '', '#' + id);
+            }
+            tabs.forEach(function (t, i) {
+                t.addEventListener('click', function () { show(t.getAttribute('data-target'), true); });
+                t.addEventListener('keydown', function (e) {
+                    var d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+                    if (!d) return;
+                    e.preventDefault();
+                    var next = tabs[(i + d + tabs.length) % tabs.length];
+                    next.focus();
+                    show(next.getAttribute('data-target'), true);
+                });
+            });
+            show(location.hash.slice(1), false);
+        })();
+    </script>
 </body>
 </html>
