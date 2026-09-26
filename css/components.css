@@ -940,3 +940,12 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Vertical video (e.g. YouTube Shorts) */
+.video-container.video-vertical {
+    padding-bottom: 0;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    max-width: 360px;
+    margin: 2rem auto;
+}
