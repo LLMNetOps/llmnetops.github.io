@@ -949,3 +949,24 @@
     max-width: 360px;
     margin: 2rem auto;
 }
+
+/* Inline highlight photo inside article body */
+.article-figure-inline {
+    margin: 2rem 0;
+}
+
+.article-figure-inline img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.article-figure-inline figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+    font-style: italic;
+}
