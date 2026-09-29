@@ -10,6 +10,18 @@
     /* Navigation */
     .mobile-menu-btn {
         display: block;
+        order: 2;
+    }
+
+    .nav-github {
+        order: 1;
+        margin-left: auto;
+        margin-right: 0.75rem;
+        padding: 0.45rem 0.6rem;
+    }
+
+    .nav-github span {
+        display: none;
     }
 
     .nav-links {

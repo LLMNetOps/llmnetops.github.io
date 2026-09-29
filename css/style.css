@@ -1137,3 +1137,28 @@ footer {
     line-height: 1.6;
     font-size: 0.95rem;
 }
+
+/* GitHub link in navigation */
+.nav-links {
+    margin-left: auto;
+}
+
+.nav-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 1.5rem;
+    padding: 0.45rem 0.9rem;
+    background: #24292f;
+    color: var(--white);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.nav-github:hover {
+    background: #000;
+    color: var(--white);
+    transform: translateY(-1px);
+}
