@@ -857,6 +857,7 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+.footer-section p,
 .footer-section a {
     color: rgba(255, 255, 255, 0.6);
 }
@@ -1165,13 +1166,13 @@ footer {
 
 /* Home: Latest News Ticker */
 .news-ticker-section {
-    padding: 4rem 0;
-    background: var(--light-bg);
+    padding: 4rem 0 3rem;
+    background: var(--white);
 }
 
 .news-ticker {
     overflow-x: auto;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding: 0.5rem 0 1rem;
 }
 
@@ -1277,4 +1278,313 @@ footer {
 
 @media (max-width: 600px) {
     .ticker-card { flex-basis: 260px; }
+}
+
+/* ===== Home page layout ===== */
+.hero-home {
+    min-height: auto;
+    padding: 9rem 2rem 6rem;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50px;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Section heading: title left, links right */
+.home-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.home-section-head h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+.home-section-head p {
+    color: var(--text-light);
+    margin: 0;
+}
+
+.home-section-head-center {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.home-head-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.home-head-links a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.home-head-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sections that wrap a .container get their side padding from it */
+.home-about,
+.home-goals,
+.home-sdg,
+.home-explore {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* About + at a glance */
+.home-about {
+    background: var(--light-bg);
+}
+
+.home-about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.home-kicker {
+    display: block;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.home-about-text h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+}
+
+.home-about-text .btn {
+    margin-top: 0.5rem;
+}
+
+.home-glance {
+    background: var(--secondary-color);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.home-glance h3 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+.home-glance dl div {
+    padding: 0.75rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.home-glance dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.home-glance dd {
+    font-weight: 600;
+}
+
+.home-glance-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.home-glance-logos img {
+    height: 52px;
+    width: auto;
+    max-width: 110px;
+    object-fit: contain;
+}
+
+/* Goals */
+.goal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.goal {
+    background: var(--white);
+    padding: 1.75rem;
+}
+
+.goal-num {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.goal h3 {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.goal p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* SDG strip */
+.home-sdg {
+    background: var(--light-bg);
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.home-sdg-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.home-sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.home-sdg-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.home-sdg-item img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+
+.home-sdg-item h3 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+.home-sdg-item p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Explore links */
+.home-explore {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.home-explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.explore-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.explore-link strong {
+    color: var(--secondary-color);
+}
+
+.explore-link strong::after {
+    content: " →";
+    color: var(--primary-color);
+}
+
+.explore-link span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.explore-link:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 900px) {
+    .home-about-grid,
+    .home-sdg-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-grid,
+    .home-explore-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-home {
+        padding: 6rem 1.5rem 3.5rem;
+    }
+
+    .news-ticker-section {
+        padding: 3rem 0 2rem;
+    }
+
+    .home-section-head h2,
+    .home-about-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .goal-grid,
+    .home-explore-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goal {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .home-sdg,
+    .home-explore {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
 }
