@@ -1,7 +1,6 @@
-// LLMNetOps - Home page news ticker (auto-scrolling)
+// LLMNetOps - Home page news cards
 
-
-document.addEventListener('DOMContentLoaded', initNewsTicker);
+document.addEventListener('DOMContentLoaded', initNewsCards);
 
 function escapeHTML(str) {
     const el = document.createElement('div');
@@ -13,7 +12,7 @@ function formatNewsDate(dateString) {
     return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
-async function initNewsTicker() {
+async function initNewsCards() {
     const track = document.getElementById('news-ticker-track');
     if (!track) return;
 
@@ -30,6 +29,12 @@ async function initNewsTicker() {
     try {
         const res = await fetch('data/media.json');
         media = await res.json();
+        media.sort((a, b) => {
+            if (!a.date && !b.date) return 0;
+            if (!a.date) return 1;
+            if (!b.date) return -1;
+            return new Date(b.date) - new Date(a.date);
+        });
     } catch (error) {
         console.error('Error loading media coverage:', error);
     }
@@ -45,6 +50,7 @@ async function initNewsTicker() {
 
     const mediaCards = media.map(m => `
         <a class="ticker-card ticker-card-media" href="${m.url}" target="_blank" rel="noopener">
+            ${m.image ? `<div class="ticker-image"><img src="${m.image}" alt="" loading="lazy"></div>` : ''}
             <div class="ticker-body">
                 <span class="ticker-tag">In the media · ${escapeHTML(m.source)}</span>
                 <h3>${escapeHTML(m.title)}</h3>
@@ -58,17 +64,5 @@ async function initNewsTicker() {
         if (mediaCards[i]) cards.push(mediaCards[i]);
     }
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const html = cards.join('');
-    // Duplicate the set (hidden from assistive tech) for a seamless loop
-    track.innerHTML = reduceMotion
-        ? html
-        : html + `<div class="ticker-dup" aria-hidden="true">${html.replace(/<a /g, '<a tabindex="-1" ')}</div>`;
-
-    if (!reduceMotion) {
-        // Constant speed regardless of how many items there are (~60px/s)
-        const half = track.scrollWidth / 2;
-        track.style.setProperty('--ticker-duration', Math.max(20, half / 60) + 's');
-        track.classList.add('is-animated');
-    }
+    track.innerHTML = cards.join('');
 }
