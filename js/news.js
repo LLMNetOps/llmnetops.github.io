@@ -74,10 +74,23 @@ async function loadMedia() {
             return new Date(b.date) - new Date(a.date);
         });
         container.innerHTML = media.map(m => `
-            <article class="news-item">
-                <h3><a href="${m.url}" target="_blank" rel="noopener">${m.title}</a></h3>
-                <p class="news-meta">${m.source}${m.date ? ' · ' + formatDate(m.date) : ''}</p>
-                ${m.summary ? `<p>${m.summary}</p>` : ''}
+            <article class="news-card">
+                ${m.image ? `
+                <div class="news-image">
+                    <img src="${m.image}" alt="${m.title}" loading="lazy" style="object-position:top">
+                    <span class="news-category">In the media</span>
+                </div>` : `
+                <div class="news-image news-image-placeholder">
+                    <span class="news-category">In the media</span>
+                </div>`}
+                <div class="news-content">
+                    <p class="news-date">${m.source}${m.date ? ' · ' + formatDate(m.date) : ''}</p>
+                    <h3 class="news-title">${m.title}</h3>
+                    ${m.summary ? `<p class="news-excerpt">${m.summary}</p>` : ''}
+                    <a href="${m.url}" class="btn btn-outline read-more" target="_blank" rel="noopener">
+                        Read Article ↗
+                    </a>
+                </div>
             </article>
         `).join('');
     } catch (error) {

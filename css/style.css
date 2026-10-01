@@ -1569,3 +1569,76 @@ footer {
         padding-bottom: 2.5rem;
     }
 }
+
+/* About page */
+.about-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-mission-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.about-mission-text h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+}
+
+.about-mission-text p {
+    margin-bottom: 1rem;
+}
+
+.about-mission-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-mission-image img {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+}
+
+/* Consistent illustration size in cards */
+.about-card-icon {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.about-card-icon img {
+    max-height: 100%;
+    max-width: 160px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Media card placeholder (no image) */
+.news-image-placeholder {
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .about-mission-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-mission-image {
+        order: -1;
+    }
+    .about-mission-image img {
+        max-width: 280px;
+    }
+}
