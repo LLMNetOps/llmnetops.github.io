@@ -66,10 +66,18 @@ async function loadMedia() {
     try {
         const response = await fetch('data/media.json');
         const media = await response.json();
+        // Sort by date descending where available
+        media.sort((a, b) => {
+            if (!a.date && !b.date) return 0;
+            if (!a.date) return 1;
+            if (!b.date) return -1;
+            return new Date(b.date) - new Date(a.date);
+        });
         container.innerHTML = media.map(m => `
             <article class="news-item">
                 <h3><a href="${m.url}" target="_blank" rel="noopener">${m.title}</a></h3>
-                <p class="news-meta">${m.source}</p>
+                <p class="news-meta">${m.source}${m.date ? ' · ' + formatDate(m.date) : ''}</p>
+                ${m.summary ? `<p>${m.summary}</p>` : ''}
             </article>
         `).join('');
     } catch (error) {

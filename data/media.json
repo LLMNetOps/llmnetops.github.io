@@ -2,26 +2,35 @@
     {
         "title": "DTI UB Holds LLMNetOps Pilot Test with IDREN Partner Universities",
         "source": "Universitas Brawijaya News",
-        "url": "https://prasetya.ub.ac.id/en/dti-ub-gelar-pilot-test-llmnetops-bersama-universitas-mitra-idren/"
+        "date": "2026-09-25",
+        "url": "https://prasetya.ub.ac.id/en/dti-ub-gelar-pilot-test-llmnetops-bersama-universitas-mitra-idren/",
+        "summary": "Coverage of the LLMNetOps Pilot Test, where DTI UB invited partner universities of IDREN to try the platform and share feedback ahead of the full Workshop Series."
     },
     {
         "title": "UB Receives International Research Funding of USD 30,000 from ISIF Asia for Developing AI System",
         "source": "Universitas Brawijaya News",
-        "url": "https://prasetya.ub.ac.id/en/ub-raih-pendanaan-riset-internasional-usd-30-000-dari-isif-asia-untuk-kembangkan-sistem-ai/"
+        "date": "2025-10-28",
+        "url": "https://prasetya.ub.ac.id/en/ub-raih-pendanaan-riset-internasional-usd-30-000-dari-isif-asia-untuk-kembangkan-sistem-ai/",
+        "summary": "Universitas Brawijaya received international research funding from ISIF Asia to develop an AI system for strengthening network operations knowledge through locally-hosted generative AI."
     },
     {
         "title": "Universitas Brawijaya Secures US$30,000 Research Funding from ISIF Asia to Develop AI System",
         "source": "Bisnis Surabaya",
-        "url": "https://surabaya.bisnis.com/read/20251029/531/1924246/kembangkan-sistem-ai-universtas-brawijaya-raih-pendanaan-riset-us30000-dari-isif-asia"
+        "date": "2025-10-29",
+        "url": "https://surabaya.bisnis.com/read/20251029/531/1924246/kembangkan-sistem-ai-universtas-brawijaya-raih-pendanaan-riset-us30000-dari-isif-asia",
+        "summary": "Coverage of Universitas Brawijaya's research funding for AI system development to strengthen network operations management in Indonesia."
     },
     {
         "title": "UB Dapat Hibah Riset Internasional untuk Kembangkan Sistem AI Pengelola Jaringan",
         "source": "Times Indonesia",
-        "url": "https://timesindonesia.co.id/indonesia-positif/562242/ub-dapat-hibah-riset-internasional-untuk-kembangkan-sistem-ai-pengelola-jaringan"
+        "date": "2025-10-28",
+        "url": "https://timesindonesia.co.id/indonesia-positif/562242/ub-dapat-hibah-riset-internasional-untuk-kembangkan-sistem-ai-pengelola-jaringan",
+        "summary": "Universitas Brawijaya menerima hibah riset USD 30,000 dari ISIF Asia untuk mengembangkan LLMNetOps, sistem AI berbasis chatbot yang membantu administrator jaringan di institusi pendidikan Indonesia."
     },
     {
         "title": "LLMNetOps: Strengthening Network Operations Knowledge Through Locally-Hosted Generative AI",
         "source": "APNIC Foundation",
-        "url": "https://apnic.foundation/projects/llmnetops/"
+        "url": "https://apnic.foundation/projects/llmnetops/",
+        "summary": "The APNIC Foundation project page for LLMNetOps, led by Universitas Brawijaya — aiming to bridge the AI literacy gap by training network professionals to adopt privacy-focused, open-source language models for infrastructure management within IDREN member institutions."
     }
 ]
