@@ -1642,3 +1642,85 @@ footer {
         max-width: 280px;
     }
 }
+
+/* Funding & Partners */
+.funding-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    align-items: start;
+}
+
+.funding-card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.funding-card-featured {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color), var(--shadow-md);
+}
+
+.funding-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.funding-logo img {
+    max-height: 100%;
+    max-width: 180px;
+    width: auto;
+    object-fit: contain;
+}
+
+.funding-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.funding-role {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary-color);
+}
+
+.funding-card h3 {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.funding-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.funding-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-top: 0.25rem;
+}
+
+.funding-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .funding-grid {
+        grid-template-columns: 1fr;
+    }
+}
