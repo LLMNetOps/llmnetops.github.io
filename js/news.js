@@ -14,6 +14,7 @@ async function loadNews() {
         newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
         
         renderNews(newsData);
+        loadMedia();
     } catch (error) {
         console.error('Error loading news:', error);
         document.getElementById('news-container').innerHTML = 
@@ -56,4 +57,22 @@ function renderNews(newsData) {
 function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
+// Load external media coverage
+async function loadMedia() {
+    const container = document.getElementById('media-container');
+    if (!container) return;
+    try {
+        const response = await fetch('data/media.json');
+        const media = await response.json();
+        container.innerHTML = media.map(m => `
+            <article class="news-item">
+                <h3><a href="${m.url}" target="_blank" rel="noopener">${m.title}</a></h3>
+                <p class="news-meta">${m.source}</p>
+            </article>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading media coverage:', error);
+    }
 }

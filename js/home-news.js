@@ -1,28 +1,5 @@
 // LLMNetOps - Home page news ticker (auto-scrolling)
 
-// External media coverage (also listed on about.html)
-const MEDIA_COVERAGE = [
-    {
-        title: 'DTI UB Holds LLMNetOps Pilot Test with IDREN Partner Universities',
-        source: 'Universitas Brawijaya News',
-        url: 'https://prasetya.ub.ac.id/en/dti-ub-gelar-pilot-test-llmnetops-bersama-universitas-mitra-idren/'
-    },
-    {
-        title: 'UB Receives International Research Funding of USD 30,000 from ISIF Asia for Developing AI System',
-        source: 'Universitas Brawijaya News',
-        url: 'https://prasetya.ub.ac.id/en/ub-raih-pendanaan-riset-internasional-usd-30-000-dari-isif-asia-untuk-kembangkan-sistem-ai/'
-    },
-    {
-        title: 'Universitas Brawijaya Secures US$30,000 Research Funding from ISIF Asia to Develop AI System',
-        source: 'Bisnis Surabaya',
-        url: 'https://surabaya.bisnis.com/read/20251029/531/1924246/kembangkan-sistem-ai-universtas-brawijaya-raih-pendanaan-riset-us30000-dari-isif-asia'
-    },
-    {
-        title: 'LLMNetOps: Strengthening Network Operations Knowledge Through Locally-Hosted Generative AI',
-        source: 'APNIC Foundation',
-        url: 'https://apnic.foundation/projects/llmnetops/'
-    }
-];
 
 document.addEventListener('DOMContentLoaded', initNewsTicker);
 
@@ -41,12 +18,20 @@ async function initNewsTicker() {
     if (!track) return;
 
     let own = [];
+    let media = [];
     try {
         const res = await fetch('data/news.json');
         own = await res.json();
         own.sort((a, b) => new Date(b.date) - new Date(a.date));
     } catch (error) {
         console.error('Error loading news:', error);
+    }
+
+    try {
+        const res = await fetch('data/media.json');
+        media = await res.json();
+    } catch (error) {
+        console.error('Error loading media coverage:', error);
     }
 
     const ownCards = own.map(a => `
@@ -58,7 +43,7 @@ async function initNewsTicker() {
             </div>
         </a>`);
 
-    const mediaCards = MEDIA_COVERAGE.map(m => `
+    const mediaCards = media.map(m => `
         <a class="ticker-card ticker-card-media" href="${m.url}" target="_blank" rel="noopener">
             <div class="ticker-body">
                 <span class="ticker-tag">In the media · ${escapeHTML(m.source)}</span>
