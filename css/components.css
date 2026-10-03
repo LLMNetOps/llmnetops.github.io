@@ -49,9 +49,11 @@
 }
 
 .key-indicators li::before {
-    content: '📊';
+    content: '–';
     position: absolute;
     left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 /* Pillar Cards */

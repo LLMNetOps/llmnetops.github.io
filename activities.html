@@ -8,6 +8,123 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/components.css">
+    <style>
+        /* Progress overview */
+        .progress-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .progress-stat {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+
+        .progress-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            display: block;
+        }
+
+        .progress-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.4rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Milestones timeline */
+        .milestones-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .milestones-list::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .milestone-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            position: relative;
+        }
+
+        .milestone-dot {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--accent-color);
+            margin-top: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .milestone-dot.upcoming {
+            background: var(--border-color);
+            box-shadow: 0 0 0 2px var(--border-color);
+        }
+
+        .milestone-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            margin-top: 3px;
+        }
+
+        .milestone-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .milestone-label a {
+            color: inherit;
+        }
+
+        .milestone-label a:hover {
+            color: var(--primary-color);
+        }
+
+        .milestone-content {
+            flex: 1;
+        }
+
+        /* Activity notes */
+        .activity-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .deliverable-overall {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -45,27 +162,97 @@
             <span>Activities</span>
         </div>
         <h1>Project Activities</h1>
-        <p>Track our progress across four key deliverable areas</p>
+        <p>Progress across four key deliverable areas</p>
+    </section>
+
+    <!-- Progress Overview -->
+    <section>
+        <div class="container">
+            <div class="progress-overview">
+                <div class="progress-stat">
+                    <span class="progress-stat-number">2</span>
+                    <span class="progress-stat-label">Deliverables In Progress</span>
+                </div>
+                <div class="progress-stat">
+                    <span class="progress-stat-number">3</span>
+                    <span class="progress-stat-label">Milestones Completed</span>
+                </div>
+                <div class="progress-stat">
+                    <span class="progress-stat-number">4</span>
+                    <span class="progress-stat-label">Partner Universities Engaged</span>
+                </div>
+                <div class="progress-stat">
+                    <span class="progress-stat-number">15 mo</span>
+                    <span class="progress-stat-label">Project Duration</span>
+                </div>
+            </div>
+
+            <h2 class="section-title mt-4">Recent Milestones</h2>
+            <ul class="milestones-list">
+                <li class="milestone-item">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">September 25, 2026</div>
+                        <div class="milestone-label">
+                            <a href="news/pilot-test-2026.html">Pilot Test and Demo Workshop</a>
+                            — hands-on session with UMM, UM, UIN Malang, and UB; platform demonstration and pilot feedback collected.
+                        </div>
+                    </div>
+                </li>
+                <li class="milestone-item">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">August 31 – September 1, 2026</div>
+                        <div class="milestone-label">
+                            <a href="news/cio-forum-2026.html">Indonesia Higher Education CIO Forum 2026</a>
+                            — LLMNetOps mentioned; upcoming workshop program announced to IT leaders from 40+ universities.
+                        </div>
+                    </div>
+                </li>
+                <li class="milestone-item">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">January 27, 2026</div>
+                        <div class="milestone-label">
+                            <a href="news/kickoff-meeting-2025.html">Project Kickoff Meeting</a>
+                            — official launch at Universitas Brawijaya; project objectives, team roles, and roadmap established.
+                        </div>
+                    </div>
+                </li>
+                <li class="milestone-item">
+                    <div class="milestone-dot upcoming"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">Upcoming</div>
+                        <div class="milestone-label">Workshop Series (Session 1 &amp; 2) — registration details to be announced.</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!-- Deliverables Section -->
     <section class="about">
         <div class="container">
+            <h2 class="section-title">Deliverables</h2>
+            <p class="section-subtitle">Four key deliverable areas tracking overall project progress</p>
+
             <!-- Deliverable 1: Curriculum Development -->
             <div class="deliverable-card">
                 <div class="deliverable-header">
                     <div class="deliverable-title">
-                        <span class="status-badge status-not-started">Not Started</span>
-                        <h3>1. Curriculum Development</h3>
+                        <div class="deliverable-overall">
+                            <span class="status-badge status-in-progress">In Progress</span>
+                            <h3>1. Curriculum Development</h3>
+                        </div>
                     </div>
                 </div>
                 <div class="deliverable-content">
                     <p>Initial survey, curriculum design, and prototyping platform for locally-hosted LLM training materials.</p>
-                    
+
                     <div class="key-indicators">
                         <h4>Key Indicators</h4>
                         <ul>
-                            <li>At least 8. survey responses from IDREN institutions</li>
+                            <li>At least 8 survey responses from IDREN institutions</li>
                             <li>1 draft curriculum developed</li>
                             <li>1 demo prototype shared for feedback</li>
                         </ul>
@@ -82,39 +269,43 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Initial Needs Assessment Survey</td>
+                                <td>
+                                    Initial Needs Assessment Survey
+                                    <div class="activity-note">Conducted as part of project kickoff (Jan 2026)</div>
+                                </td>
                                 <td>1 report</td>
-                                <td><span class="status-badge status-not-started">Not Started</span></td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
                             </tr>
                             <tr>
                                 <td>Curriculum Design and Development</td>
                                 <td>1 curriculum</td>
-                                <td><span class="status-badge status-not-started">Not Started</span></td>
+                                <td><span class="status-badge status-in-progress">In Progress</span></td>
                             </tr>
                             <tr>
                                 <td>Module Development (5 modules)</td>
                                 <td>5 modules</td>
-                                <td><span class="status-badge status-not-started">Not Started</span></td>
+                                <td><span class="status-badge status-in-progress">In Progress</span></td>
                             </tr>
                             <tr>
-                                <td>Platform Prototyping</td>
+                                <td>
+                                    Platform Prototyping
+                                    <div class="activity-note">Demo platform used at pilot test, Sep 25, 2026</div>
+                                </td>
                                 <td>1 prototype</td>
-                                <td><span class="status-badge status-not-started">Not Started</span></td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
                             </tr>
                             <tr>
-                                <td>Pilot Feedback Collection</td>
+                                <td>
+                                    Pilot Feedback Collection
+                                    <div class="activity-note">Evaluation survey completed at pilot test, Sep 25, 2026 — <a href="news/pilot-test-2026.html">see report</a></div>
+                                </td>
                                 <td>1 report</td>
-                                <td><span class="status-badge status-not-started">Not Started</span></td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
                             </tr>
                             <tr>
                                 <td>Developing a Webpage Portal</td>
                                 <td>1 website</td>
                                 <td><span class="status-badge status-in-progress">In Progress</span></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -125,13 +316,15 @@
             <div class="deliverable-card">
                 <div class="deliverable-header">
                     <div class="deliverable-title">
-                        <span class="status-badge status-not-started">Not Started</span>
-                        <h3>2. Workshop Delivery</h3>
+                        <div class="deliverable-overall">
+                            <span class="status-badge status-in-progress">In Progress</span>
+                            <h3>2. Workshop Delivery</h3>
+                        </div>
                     </div>
                 </div>
                 <div class="deliverable-content">
                     <p>Two hands-on workshop sessions focusing on LLM fundamentals and AI agentic workflows for network operations.</p>
-                    
+
                     <div class="key-indicators">
                         <h4>Key Indicators</h4>
                         <ul>
@@ -152,9 +345,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Workshop Planning</td>
+                                <td>
+                                    Workshop Planning
+                                    <div class="activity-note">Pilot test conducted Sep 25, 2026; materials and agenda refined based on feedback</div>
+                                </td>
                                 <td>Complete planning</td>
-                                <td><span class="status-badge status-not-started">Not Started</span></td>
+                                <td><span class="status-badge status-in-progress">In Progress</span></td>
                             </tr>
                             <tr>
                                 <td>Workshop Session 1: LLM Fundamentals</td>
@@ -171,11 +367,6 @@
                                 <td>Complete documentation</td>
                                 <td><span class="status-badge status-not-started">Not Started</span></td>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -185,13 +376,15 @@
             <div class="deliverable-card">
                 <div class="deliverable-header">
                     <div class="deliverable-title">
-                        <span class="status-badge status-not-started">Not Started</span>
-                        <h3>3. Survey and Analysis</h3>
+                        <div class="deliverable-overall">
+                            <span class="status-badge status-not-started">Not Started</span>
+                            <h3>3. Survey and Analysis</h3>
+                        </div>
                     </div>
                 </div>
                 <div class="deliverable-content">
                     <p>Comprehensive survey, case studies, and whitepaper development to document project impact.</p>
-                    
+
                     <div class="key-indicators">
                         <h4>Key Indicators</h4>
                         <ul>
@@ -212,12 +405,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Final Survey & Data Collection</td>
+                                <td>Final Survey &amp; Data Collection</td>
                                 <td>1 survey report</td>
                                 <td><span class="status-badge status-not-started">Not Started</span></td>
                             </tr>
                             <tr>
-                                <td>Case Brief & Testimonial Collection</td>
+                                <td>Case Brief &amp; Testimonial Collection</td>
                                 <td>3+ case studies</td>
                                 <td><span class="status-badge status-not-started">Not Started</span></td>
                             </tr>
@@ -225,11 +418,6 @@
                                 <td>Whitepaper on NetOps with AI</td>
                                 <td>1 whitepaper</td>
                                 <td><span class="status-badge status-not-started">Not Started</span></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -240,13 +428,15 @@
             <div class="deliverable-card">
                 <div class="deliverable-header">
                     <div class="deliverable-title">
-                        <span class="status-badge status-not-started">Not Started</span>
-                        <h3>4. Reporting</h3>
+                        <div class="deliverable-overall">
+                            <span class="status-badge status-not-started">Not Started</span>
+                            <h3>4. Reporting</h3>
+                        </div>
                     </div>
                 </div>
                 <div class="deliverable-content">
                     <p>Project reporting and dissemination of findings to stakeholders and funding organization.</p>
-                    
+
                     <div class="key-indicators">
                         <h4>Key Indicators</h4>
                         <ul>
@@ -272,14 +462,9 @@
                                 <td><span class="status-badge status-not-started">Not Started</span></td>
                             </tr>
                             <tr>
-                                <td>Final Report Writing & Dissemination</td>
+                                <td>Final Report Writing &amp; Dissemination</td>
                                 <td>1 final report</td>
                                 <td><span class="status-badge status-not-started">Not Started</span></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>

@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "Curriculum Development",
-            "status": "not_started",
+            "status": "in_progress",
             "description": "Initial survey, curriculum design, and prototyping platform for locally-hosted LLM training materials.",
             "pso": "A co-created curriculum on locally-hosted LLMs tailored for network operations, developed collaboratively with IDREN member institutions.",
             "keyIndicators": [
@@ -16,31 +16,34 @@
                     "name": "Initial Needs Assessment Survey",
                     "description": "Distribute survey to identify technical gaps and institutional needs across IDREN members",
                     "target": "1 report",
-                    "status": "not_started"
+                    "status": "completed",
+                    "completedDate": "2026-01-27"
                 },
                 {
                     "name": "Curriculum Design and Development",
                     "description": "Design comprehensive curriculum based on survey findings",
                     "target": "1 curriculum document",
-                    "status": "not_started"
+                    "status": "in_progress"
                 },
                 {
                     "name": "Module Development",
                     "description": "Develop 5 training modules covering LLM fundamentals to advanced applications",
                     "target": "5 modules",
-                    "status": "not_started"
+                    "status": "in_progress"
                 },
                 {
                     "name": "Platform Prototyping",
                     "description": "Build demo prototype for hands-on LLM deployment exercises",
                     "target": "1 prototype",
-                    "status": "not_started"
+                    "status": "completed",
+                    "completedDate": "2026-09-25"
                 },
                 {
                     "name": "Pilot Feedback Collection",
                     "description": "Gather feedback from pilot participants to refine materials",
                     "target": "1 feedback report",
-                    "status": "not_started"
+                    "status": "completed",
+                    "completedDate": "2026-09-25"
                 },
                 {
                     "name": "Developing a Webpage Portal",
@@ -53,7 +56,7 @@
         {
             "id": 2,
             "title": "Workshop Delivery",
-            "status": "not_started",
+            "status": "in_progress",
             "description": "Two hands-on workshop sessions focusing on LLM fundamentals and AI agentic workflows for network operations.",
             "pso": "Hands-on workshops that train at least 20 network operations professionals from IDREN institutions on privacy-aware LLM deployment.",
             "keyIndicators": [
@@ -66,7 +69,7 @@
                     "name": "Workshop Planning",
                     "description": "Develop workshop agenda, prepare materials, and coordinate logistics",
                     "target": "Complete planning documentation",
-                    "status": "not_started"
+                    "status": "in_progress"
                 },
                 {
                     "name": "Workshop Session 1: LLM Fundamentals",
@@ -147,5 +150,5 @@
             ]
         }
     ],
-    "projectProgress": 5
+    "projectProgress": 30
 }
