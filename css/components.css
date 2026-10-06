@@ -1016,13 +1016,25 @@
 }
 
 /* ── Dropdown nav ── */
+.nav-links {
+    align-items: center;
+}
 .nav-links li.has-dropdown {
     position: relative;
 }
 .nav-links li.has-dropdown > a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.3rem;
+}
+/* invisible bridge over the gap so hover isn't lost on the way to the menu */
+.nav-links li.has-dropdown::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    right: -1rem;
+    top: 100%;
+    height: 14px;
 }
 .nav-dropdown-caret {
     width: 10px;
@@ -1110,6 +1122,7 @@
 /* Mobile dropdown */
 @media (max-width: 768px) {
     .nav-links li.has-dropdown > a .nav-dropdown-caret { display: none; }
+    .nav-links li.has-dropdown::after { display: none; }
     .nav-dropdown {
         position: static;
         transform: none;
