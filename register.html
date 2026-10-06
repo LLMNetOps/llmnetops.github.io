@@ -229,6 +229,7 @@
             flex: 1;
             min-height: 0;
             overflow: hidden;
+            position: relative;
         }
         .form-embed iframe {
             width: 100%;
@@ -236,6 +237,44 @@
             min-height: 520px;
             border: none;
             display: block;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .form-embed iframe.loaded {
+            opacity: 1;
+        }
+
+        /* ── Loader ── */
+        .form-loader {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: #fff;
+            z-index: 2;
+            transition: opacity 0.35s ease;
+        }
+        .form-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loader-spinner {
+            width: 42px;
+            height: 42px;
+            border: 3px solid #e5e7eb;
+            border-top-color: #f97316;
+            border-radius: 50%;
+            animation: spin 0.75s linear infinite;
+        }
+        .loader-text {
+            font-size: 0.9rem;
+            color: var(--text-light, #6b7280);
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* ── Full-viewport form mode ── */
@@ -401,6 +440,10 @@
             </div>
 
             <div class="form-embed">
+                <div class="form-loader" id="form-loader">
+                    <div class="loader-spinner"></div>
+                    <span class="loader-text" data-i18n="loaderText">Loading form…</span>
+                </div>
                 <iframe
                     id="registration-iframe"
                     src="https://forms.gle/f2fdvGHMF52CNvF89"
@@ -490,6 +533,7 @@
                 formIntro:    'Fill in the form below to register. The committee will review your application and send a confirmation to your email.',
                 formTrouble:  'Having trouble?',
                 formDirectLink: 'Open form in a new tab →',
+                loaderText:     'Loading form…',
             },
             id: {
                 breadcrumb:   'Pendaftaran',
@@ -519,6 +563,7 @@
                 formIntro:    'Isi formulir di bawah ini untuk mendaftar. Panitia akan meninjau pendaftaran Anda dan mengirimkan konfirmasi ke email Anda.',
                 formTrouble:  'Formulir tidak tampil?',
                 formDirectLink: 'Buka formulir di tab baru →',
+                loaderText:     'Memuat formulir…',
             }
         };
 
@@ -552,8 +597,14 @@
         const formSec  = document.getElementById('form-section');
         const wrapper  = document.querySelector('.register-wrapper');
         const iframe   = document.getElementById('registration-iframe');
+        const loader   = document.getElementById('form-loader');
         const btnCont  = document.getElementById('btn-continue');
         const btnBack  = document.getElementById('btn-back');
+
+        iframe.addEventListener('load', function () {
+            iframe.classList.add('loaded');
+            loader.classList.add('hidden');
+        });
 
         function setFormHeight() {
             var navH = document.querySelector('nav').offsetHeight;
