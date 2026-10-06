@@ -15,16 +15,15 @@
         .ws-timeline {
             display: flex;
             align-items: flex-start;
-            justify-content: center;
-            gap: 0;
             margin: 0 auto 3rem;
-            max-width: 780px;
+            max-width: 640px;
+            width: 100%;
         }
         .ws-step {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 1;
+            flex: 0 0 140px;
             text-align: center;
         }
         .ws-step-dot {
@@ -38,8 +37,6 @@
             font-size: 0.85rem;
             color: #fff;
             flex-shrink: 0;
-            position: relative;
-            z-index: 1;
         }
         .ws-step-dot.online  { background: var(--accent-color); }
         .ws-step-dot.onsite  { background: var(--primary-color); }
@@ -58,8 +55,8 @@
             flex: 1;
             height: 2px;
             background: var(--border-color);
-            margin-top: 19px;
-            max-width: 80px;
+            margin-top: 20px;
+            min-width: 20px;
         }
 
         /* ── 2-col card body ── */
@@ -197,7 +194,7 @@
                 </div>
                 <div class="ws-connector"></div>
                 <div class="ws-step">
-                    <div class="ws-step-dot onsite">D1/div>
+                    <div class="ws-step-dot onsite">D1</div>
                     <div class="ws-step-label">Day 1</div>
                     <div class="ws-step-date">6 Nov · Onsite · 09.00–16.00</div>
                 </div>
