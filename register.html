@@ -183,59 +183,78 @@
             display: none;
             opacity: 0;
             transform: translateY(16px);
-            transition: opacity 0.35s ease, transform 0.35s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
         .form-section.visible {
-            display: block;
+            display: flex;
+            flex-direction: column;
         }
         .form-section.shown {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ── Top bar inside form (back btn + direct link) ── */
+        .form-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border-color, #e5e7eb);
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
         .form-back {
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             color: var(--primary-color, #2563eb);
             background: none;
             border: none;
             cursor: pointer;
             font-family: inherit;
             padding: 0;
-            margin-bottom: 1.5rem;
             font-weight: 500;
         }
-        .form-back:hover {
-            text-decoration: underline;
-        }
-        .form-intro {
-            margin-bottom: 1.5rem;
-        }
-        .form-intro p {
+        .form-back:hover { text-decoration: underline; }
+        .form-direct-link {
+            font-size: 0.82rem;
             color: var(--text-light, #6b7280);
-            font-size: 0.95rem;
         }
+        .form-direct-link a { color: var(--primary-color, #2563eb); }
 
-        /* ── Seamless iframe ── */
+        /* ── Seamless iframe — fills remaining height ── */
         .form-embed {
-            width: 100%;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
         }
         .form-embed iframe {
             width: 100%;
-            min-height: 900px;
+            height: 100%;
+            min-height: 520px;
             border: none;
             display: block;
-            background: transparent;
         }
-        .form-direct-link {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 0.88rem;
-            color: var(--text-light, #6b7280);
+
+        /* ── Full-viewport form mode ── */
+        body.form-mode {
+            overflow: hidden;
         }
-        .form-direct-link a {
-            color: var(--primary-color, #2563eb);
+        body.form-mode .page-header,
+        body.form-mode footer,
+        body.form-mode .back-to-top {
+            display: none !important;
+        }
+        body.form-mode .register-wrapper {
+            max-width: 100%;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        body.form-mode .form-section.visible {
+            padding: 0 1.5rem;
         }
     </style>
 </head>
@@ -368,15 +387,17 @@
         <!-- ── Form Section ── -->
         <div class="form-section" id="form-section">
 
-            <button class="form-back" id="btn-back" aria-label="Back to workshop details">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                <span data-i18n="backBtn">Back to details</span>
-            </button>
-
-            <div class="form-intro">
-                <p data-i18n="formIntro">Fill in the form below to register. The committee will review your application and send a confirmation to your email.</p>
+            <div class="form-topbar">
+                <button class="form-back" id="btn-back" aria-label="Back to workshop details">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    <span data-i18n="backBtn">Back to details</span>
+                </button>
+                <span class="form-direct-link">
+                    <span data-i18n="formTrouble">Having trouble?</span>
+                    <a href="https://forms.gle/f2fdvGHMF52CNvF89" target="_blank" rel="noopener noreferrer" data-i18n="formDirectLink">Open in new tab →</a>
+                </span>
             </div>
 
             <div class="form-embed">
@@ -388,11 +409,6 @@
                     allowfullscreen>
                 </iframe>
             </div>
-
-            <p class="form-direct-link">
-                <span data-i18n="formTrouble">Having trouble?</span>
-                <a href="https://forms.gle/f2fdvGHMF52CNvF89" target="_blank" rel="noopener noreferrer" data-i18n="formDirectLink">Open form in a new tab →</a>
-            </p>
         </div>
 
     </div>
@@ -534,26 +550,43 @@
         /* ── Show / hide form ── */
         const details  = document.getElementById('workshop-details');
         const formSec  = document.getElementById('form-section');
+        const wrapper  = document.querySelector('.register-wrapper');
+        const iframe   = document.getElementById('registration-iframe');
         const btnCont  = document.getElementById('btn-continue');
         const btnBack  = document.getElementById('btn-back');
+
+        function setFormHeight() {
+            var navH = document.querySelector('nav').offsetHeight;
+            var vh   = window.innerHeight - navH;
+            wrapper.style.height = vh + 'px';
+            /* topbar height is measured after it's visible */
+            var topbar = formSec.querySelector('.form-topbar');
+            var topbarH = topbar ? topbar.offsetHeight : 44;
+            iframe.style.height = (vh - topbarH - 2) + 'px';
+        }
 
         btnCont.addEventListener('click', function () {
             details.classList.add('hiding');
             setTimeout(function () {
                 details.classList.add('hidden');
+                document.body.classList.add('form-mode');
+                window.scrollTo(0, 0);
                 formSec.classList.add('visible');
+                setFormHeight();
                 requestAnimationFrame(function () {
                     requestAnimationFrame(function () {
                         formSec.classList.add('shown');
                     });
                 });
-                window.scrollTo({ top: formSec.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
-            }, 320);
+            }, 300);
         });
 
         btnBack.addEventListener('click', function () {
             formSec.classList.remove('shown');
             setTimeout(function () {
+                document.body.classList.remove('form-mode');
+                wrapper.style.height = '';
+                iframe.style.height = '';
                 formSec.classList.remove('visible');
                 details.classList.remove('hidden');
                 requestAnimationFrame(function () {
@@ -561,8 +594,14 @@
                         details.classList.remove('hiding');
                     });
                 });
-                window.scrollTo({ top: details.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
-            }, 320);
+                window.scrollTo(0, 0);
+            }, 300);
+        });
+
+        window.addEventListener('resize', function () {
+            if (document.body.classList.contains('form-mode')) {
+                setFormHeight();
+            }
         });
     })();
     </script>
