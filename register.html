@@ -230,6 +230,7 @@
             min-height: 0;
             overflow: hidden;
             position: relative;
+            padding-top: 1rem;
         }
         .form-embed iframe {
             width: 100%;
@@ -613,7 +614,7 @@
             /* topbar height is measured after it's visible */
             var topbar = formSec.querySelector('.form-topbar');
             var topbarH = topbar ? topbar.offsetHeight : 44;
-            iframe.style.height = (vh - topbarH - 2) + 'px';
+            iframe.style.height = (vh - topbarH - 18) + 'px';
         }
 
         btnCont.addEventListener('click', function () {
