@@ -972,3 +972,28 @@
     text-align: center;
     font-style: italic;
 }
+
+/* Register nav button */
+.nav-links a.nav-register {
+    background: var(--primary-color);
+    color: var(--white) !important;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+.nav-links a.nav-register:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+.nav-links a.nav-register::after {
+    display: none !important;
+}
+
+/* Explore highlight card */
+.explore-link-highlight {
+    border: 2px solid var(--primary-color) !important;
+}
+.explore-link-highlight strong {
+    color: var(--primary-color);
+}

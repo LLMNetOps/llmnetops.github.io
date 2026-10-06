@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for LLMNetOps workshops and activities - Sign up to participate in our training programs on locally-hosted AI for network operations.">
+    <title>Register - LLMNetOps</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .register-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+        .register-intro {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .register-intro p {
+            max-width: 600px;
+            margin: 0.75rem auto 0;
+            color: var(--color-text-muted, #6b7280);
+        }
+        .form-container {
+            background: var(--color-surface, #fff);
+            border: 1px solid var(--color-border, #e5e7eb);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .form-container iframe {
+            width: 100%;
+            min-height: 820px;
+            border: none;
+            display: block;
+        }
+        .form-fallback {
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .form-fallback p {
+            margin-bottom: 1.25rem;
+            color: var(--color-text-muted, #6b7280);
+        }
+
+        /* Workshop details block */
+        .workshop-details {
+            background: var(--color-surface, #fff);
+            border: 1px solid var(--color-border, #e5e7eb);
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .workshop-details h2 {
+            margin: 0 0 0.25rem;
+        }
+        .workshop-subtitle {
+            color: var(--color-text-muted, #6b7280);
+            font-size: 1.05rem;
+            margin: 0 0 1.75rem;
+        }
+        .workshop-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+        .workshop-meta-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .workshop-meta-icon {
+            font-size: 1.3rem;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+        .workshop-meta-item div {
+            display: flex;
+            flex-direction: column;
+        }
+        .workshop-meta-item strong {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted, #6b7280);
+        }
+        .workshop-meta-item span {
+            font-size: 0.95rem;
+        }
+        .workshop-benefits {
+            margin-bottom: 1.25rem;
+        }
+        .workshop-benefits h3 {
+            font-size: 1rem;
+            margin: 0 0 0.6rem;
+        }
+        .workshop-benefits ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+        .workshop-benefits li {
+            margin-bottom: 0.35rem;
+        }
+        .workshop-notice {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 6px 6px 0;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .workshop-notice.workshop-notice-info {
+            background: #eff6ff;
+            border-left-color: #3b82f6;
+        }
+        .workshop-org {
+            margin: 1rem 0 0;
+            font-size: 0.85rem;
+            color: var(--color-text-muted, #6b7280);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/llmnetops-logo-formal.png" alt="LLMNetOps Logo">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="register.html" class="nav-register active">Register</a></li>
+            </ul>
+            <a href="https://github.com/LLMNetOps" class="nav-github" target="_blank" rel="noopener noreferrer" aria-label="LLMNetOps on GitHub" title="LLMNetOps on GitHub">
+                <svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Register</span>
+        </div>
+        <h1>Workshop Registration</h1>
+        <p>Sign up to participate in LLMNetOps training programs</p>
+    </section>
+
+    <!-- Registration Form -->
+    <div class="register-wrapper">
+        <!-- Workshop Details -->
+        <div class="workshop-details">
+            <h2>LLMNetOps Workshop</h2>
+            <p class="workshop-subtitle">Hands-on Training on Privacy-Aware AI for Network Operations</p>
+
+            <div class="workshop-meta">
+                <div class="workshop-meta-item">
+                    <span class="workshop-meta-icon">📅</span>
+                    <div>
+                        <strong>Date</strong>
+                        <span>6–7 November 2026</span>
+                    </div>
+                </div>
+                <div class="workshop-meta-item">
+                    <span class="workshop-meta-icon">📍</span>
+                    <div>
+                        <strong>Location</strong>
+                        <span>Hotel Ijen Suites Malang, Jawa Timur</span>
+                    </div>
+                </div>
+                <div class="workshop-meta-item">
+                    <span class="workshop-meta-icon">🎟️</span>
+                    <div>
+                        <strong>Fee</strong>
+                        <span>Free of charge</span>
+                    </div>
+                </div>
+                <div class="workshop-meta-item">
+                    <span class="workshop-meta-icon">👥</span>
+                    <div>
+                        <strong>Seats</strong>
+                        <span>±40 participants</span>
+                    </div>
+                </div>
+                <div class="workshop-meta-item">
+                    <span class="workshop-meta-icon">⏰</span>
+                    <div>
+                        <strong>Registration Deadline</strong>
+                        <span>31 October 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshop-benefits">
+                <h3>What you will get</h3>
+                <ul>
+                    <li>Training materials &amp; technical guides</li>
+                    <li>Access to LLMNetOps resource repository</li>
+                    <li>Certificate of participation</li>
+                    <li>Access to hands-on lab</li>
+                </ul>
+            </div>
+
+            <div class="workshop-notice">
+                <strong>⚠️ Please note:</strong> Accommodation and transportation are not covered by the organiser. Participants are responsible for their own travel and lodging arrangements.
+            </div>
+
+            <div class="workshop-notice workshop-notice-info">
+                <strong>📌 Selection process:</strong> Registrations will be reviewed by the committee. Confirmation of participation will be sent by email. The committee reserves the right to manage the composition of participants per institution to ensure equitable representation.
+            </div>
+
+            <p class="workshop-org">This workshop is part of the LLMNetOps project funded by ISIF Asia 2025, implemented by Universitas Brawijaya in collaboration with IDREN.</p>
+        </div>
+
+        <div class="register-intro">
+            <p>Fill in the form below to register. The committee will review your application and send a confirmation to your email.</p>
+        </div>
+
+        <div class="form-container" id="form-container">
+            <iframe
+                id="registration-iframe"
+                src="https://forms.gle/f2fdvGHMF52CNvF89"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="LLMNetOps Workshop Registration Form"
+                loading="lazy">
+            </iframe>
+            <noscript>
+                <div class="form-fallback">
+                    <p>The registration form could not be loaded in your browser.</p>
+                    <a href="https://forms.gle/f2fdvGHMF52CNvF89" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open Registration Form</a>
+                </div>
+            </noscript>
+        </div>
+        <p style="text-align:center; margin-top:1rem; font-size:0.9rem; color:var(--color-text-muted,#6b7280);">
+            Having trouble with the form?
+            <a href="https://forms.gle/f2fdvGHMF52CNvF89" target="_blank" rel="noopener noreferrer">Open it directly in a new tab →</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LLMNetOps</h4>
+                <p>Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI</p>
+                <p><a href="https://apnic.foundation/projects/llmnetops/" target="_blank">View Project on APNIC Foundation</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Funded By</h4>
+                <div class="partner-logos">
+                    <img src="images/APNIC-Foundation-and-ISIF-Logo-white-stacked-01.svg" alt="APNIC Foundation and ISIF Asia">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Implemented By</h4>
+                <div class="partner-logos">
+                    <img src="images/Logo_Universitas_Brawijaya.png" alt="Universitas Brawijaya">
+                    <img src="images/logo-idren.png" alt="IDREN">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2024</span> LLMNetOps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
