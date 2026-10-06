@@ -10,6 +10,48 @@
     <link rel="stylesheet" href="css/components.css">
     <style>
         .card-icon svg { color: var(--primary-color); }
+
+        /* Compact workshop info strip */
+        .ws-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .ws-info-item {
+            padding: 1.25rem 1.5rem;
+            border-right: 1px solid var(--border-color);
+        }
+        .ws-info-item:last-child { border-right: none; }
+        .ws-info-item dt {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .ws-info-item dd {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .ws-info-grid { grid-template-columns: 1fr 1fr; }
+            .ws-info-item:nth-child(2) { border-right: none; }
+            .ws-info-item:nth-child(1),
+            .ws-info-item:nth-child(2) { border-bottom: 1px solid var(--border-color); }
+        }
+        @media (max-width: 480px) {
+            .ws-info-grid { grid-template-columns: 1fr; }
+            .ws-info-item { border-right: none; border-bottom: 1px solid var(--border-color); }
+            .ws-info-item:last-child { border-bottom: none; }
+        }
     </style>
 </head>
 <body>
@@ -174,28 +216,36 @@
     <section>
         <div class="container">
             <h2 class="section-title">Workshop Information</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-                    <h3>Target Audience</h3>
-                    <p>Network operations professionals, IT administrators, and technical staff from IDREN member institutions. Open to other educational and research institutions in Indonesia.</p>
+            <dl class="ws-info-grid">
+                <div class="ws-info-item">
+                    <dt>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        Audience
+                    </dt>
+                    <dd>Network ops professionals &amp; IT staff from IDREN member and other Indonesian research/education institutions</dd>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                    <h3>Registration Fee</h3>
-                    <p>The workshops are free of charge, funded by APNIC Foundation through the ISIF Asia 2025 grant program.</p>
+                <div class="ws-info-item">
+                    <dt>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        Fee
+                    </dt>
+                    <dd>Free — funded by APNIC Foundation / ISIF Asia 2025</dd>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-                    <h3>Language</h3>
-                    <p>Instruction will be primarily in Indonesian with materials available in both Indonesian and English. English support available.</p>
+                <div class="ws-info-item">
+                    <dt>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        Language
+                    </dt>
+                    <dd>Indonesian (primary), materials in Indonesian &amp; English</dd>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-                    <h3>Certificate</h3>
-                    <p>Participants who complete both sessions will receive a certificate of completion from Universitas Brawijaya.</p>
+                <div class="ws-info-item">
+                    <dt>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        Certificate
+                    </dt>
+                    <dd>Completion certificate from Universitas Brawijaya for participants attending both sessions</dd>
                 </div>
-            </div>
+            </dl>
         </div>
     </section>
 
