@@ -1023,7 +1023,7 @@
     position: relative;
 }
 .nav-links li.has-dropdown > a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.3rem;
 }
