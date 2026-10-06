@@ -11,6 +11,76 @@
     <style>
         .card-icon svg { color: var(--primary-color); }
 
+        /* ── Session timeline ── */
+        .ws-timeline {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0;
+            margin: 0 auto 3rem;
+            max-width: 780px;
+        }
+        .ws-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            text-align: center;
+        }
+        .ws-step-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #fff;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .ws-step-dot.online  { background: var(--accent-color); }
+        .ws-step-dot.onsite  { background: var(--primary-color); }
+        .ws-step-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+        .ws-step-date {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+        }
+        .ws-connector {
+            flex: 1;
+            height: 2px;
+            background: var(--border-color);
+            margin-top: 19px;
+            max-width: 80px;
+        }
+
+        /* ── 2-col card body ── */
+        .ws-card-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .ws-col h4 { margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--secondary-color); }
+        .ws-col .topic-list { margin: 0; }
+        .ws-col .topic-list li { padding: 0.35rem 0; font-size: 0.9rem; }
+
+        @media (max-width: 640px) {
+            .ws-card-body { grid-template-columns: 1fr; gap: 1.25rem; }
+            .ws-timeline { flex-direction: column; align-items: center; }
+            .ws-connector { width: 2px; height: 24px; margin: 0; }
+        }
+
         /* Compact workshop info strip */
         .ws-info-grid {
             display: grid;
@@ -116,7 +186,28 @@
     <section class="about">
         <div class="container">
             <h2 class="section-title">Workshop Sessions</h2>
-            <p class="section-subtitle">Three sessions — one online pre-workshop followed by two onsite hands-on days</p>
+            <p class="section-subtitle">Three sessions — one online pre-workshop followed by two full-day onsite sessions</p>
+
+            <!-- Timeline overview -->
+            <div class="ws-timeline">
+                <div class="ws-step">
+                    <div class="ws-step-dot online">Pre</div>
+                    <div class="ws-step-label">Pre-Workshop</div>
+                    <div class="ws-step-date">23 Oct · Online · ~3 hours</div>
+                </div>
+                <div class="ws-connector"></div>
+                <div class="ws-step">
+                    <div class="ws-step-dot onsite">S1</div>
+                    <div class="ws-step-label">Session 1</div>
+                    <div class="ws-step-date">6 Nov · Onsite · 09.00–16.00</div>
+                </div>
+                <div class="ws-connector"></div>
+                <div class="ws-step">
+                    <div class="ws-step-dot onsite">S2</div>
+                    <div class="ws-step-label">Session 2</div>
+                    <div class="ws-step-date">7 Nov · Onsite · 09.00–16.00</div>
+                </div>
+            </div>
 
             <!-- Pre-Workshop -->
             <div class="workshop-card" style="border-left-color: var(--accent-color);">
@@ -130,30 +221,32 @@
                     </div>
                     <div class="workshop-meta">
                         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 23 October 2026</span>
-                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Half-day</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> ~3 hours</span>
                         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.36a1 1 0 0 1-1.447.89L15 14M3 8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/></svg> Online</span>
                     </div>
                 </div>
-
-                <p>A half-day online session designed to generate interest and ensure all participants are fully prepared before the onsite workshop days. We will present findings from the needs survey and give a first look at the project and tools.</p>
-
-                <h4 class="mt-3">Agenda</h4>
-                <ul class="topic-list">
-                    <li>Project introduction and background</li>
-                    <li>Presentation of survey results and identified needs</li>
-                    <li>Live demonstration of locally-hosted LLM tools</li>
-                    <li>Overview of onsite workshop schedule (09.00–16.00 each day)</li>
-                    <li>Environment preparation guide and technical checklist</li>
-                    <li>Q&amp;A and pre-registration confirmation</li>
-                </ul>
-
-                <h4 class="mt-3">What to Prepare Before Onsite</h4>
-                <ul class="topic-list">
-                    <li>Laptop with minimum 8 GB RAM (16 GB recommended)</li>
-                    <li>Install required software per the preparation guide (shared after registration)</li>
-                    <li>Stable internet connection for the online session</li>
-                    <li>Complete the pre-workshop survey if not yet submitted</li>
-                </ul>
+                <p>A short online session to generate interest and ensure all participants are fully prepared before the onsite days. We will present findings from the needs survey and give a first look at the project and tools.</p>
+                <div class="ws-card-body">
+                    <div class="ws-col">
+                        <h4>Agenda</h4>
+                        <ul class="topic-list">
+                            <li>Project introduction and background</li>
+                            <li>Presentation of survey results and identified needs</li>
+                            <li>Live demonstration of locally-hosted LLM tools</li>
+                            <li>Overview of onsite schedule (09.00–16.00 each day)</li>
+                            <li>Q&amp;A and pre-registration confirmation</li>
+                        </ul>
+                    </div>
+                    <div class="ws-col">
+                        <h4>What to Prepare Before Onsite</h4>
+                        <ul class="topic-list">
+                            <li>Laptop with minimum 8 GB RAM (16 GB recommended)</li>
+                            <li>Install required software per the preparation guide (shared after registration)</li>
+                            <li>Stable internet connection for the online session</li>
+                            <li>Complete the pre-workshop survey if not yet submitted</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Session 1 -->
@@ -168,38 +261,40 @@
                     </div>
                     <div class="workshop-meta">
                         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 6 November 2026</span>
-                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Duration: 4 hours</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 09.00–16.00</span>
                         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Onsite</span>
                     </div>
                 </div>
-
                 <p>This foundational session introduces participants to Large Language Models, covering core concepts, privacy considerations, and the fundamentals of local deployment. Participants will learn why locally-hosted LLMs are crucial for institutional data privacy.</p>
-
-                <h4 class="mt-3">Topics Covered</h4>
-                <ul class="topic-list">
-                    <li>Introduction to Large Language Models (LLMs)</li>
-                    <li>Understanding AI privacy concerns</li>
-                    <li>Local vs. cloud-based AI deployment</li>
-                    <li>Privacy-aware AI principles</li>
-                    <li>Introduction to open-source LLM models</li>
-                    <li>Basic RAG (Retrieval-Augmented Generation) concepts</li>
-                    <li>Infrastructure requirements overview</li>
-                </ul>
-
-                <h4 class="mt-3">Prerequisites</h4>
-                <ul class="topic-list">
-                    <li>Basic understanding of networking concepts</li>
-                    <li>Familiarity with command-line interfaces</li>
-                    <li>No prior AI/ML experience required</li>
-                </ul>
-
-                <h4 class="mt-3">Learning Outcomes</h4>
-                <ul class="topic-list">
-                    <li>Understand core LLM concepts and terminology</li>
-                    <li>Recognize privacy implications of AI deployment</li>
-                    <li>Evaluate local vs. cloud AI solutions</li>
-                    <li>Identify suitable open-source LLM models</li>
-                </ul>
+                <div class="ws-card-body">
+                    <div class="ws-col">
+                        <h4>Topics Covered</h4>
+                        <ul class="topic-list">
+                            <li>Introduction to Large Language Models (LLMs)</li>
+                            <li>Understanding AI privacy concerns</li>
+                            <li>Local vs. cloud-based AI deployment</li>
+                            <li>Privacy-aware AI principles</li>
+                            <li>Introduction to open-source LLM models</li>
+                            <li>Basic RAG (Retrieval-Augmented Generation) concepts</li>
+                            <li>Infrastructure requirements overview</li>
+                        </ul>
+                    </div>
+                    <div class="ws-col">
+                        <h4>Prerequisites</h4>
+                        <ul class="topic-list">
+                            <li>Basic understanding of networking concepts</li>
+                            <li>Familiarity with command-line interfaces</li>
+                            <li>No prior AI/ML experience required</li>
+                        </ul>
+                        <h4 class="mt-3">Learning Outcomes</h4>
+                        <ul class="topic-list">
+                            <li>Understand core LLM concepts and terminology</li>
+                            <li>Recognize privacy implications of AI deployment</li>
+                            <li>Evaluate local vs. cloud AI solutions</li>
+                            <li>Identify suitable open-source LLM models</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Session 2 -->
@@ -214,38 +309,40 @@
                     </div>
                     <div class="workshop-meta">
                         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 7 November 2026</span>
-                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Duration: 4 hours</span>
+                        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 09.00–16.00</span>
                         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Onsite</span>
                     </div>
                 </div>
-
                 <p>Building on Session 1, this advanced session focuses on practical implementation of AI agentic workflows for network operations. Participants will work with live prototypes and learn to integrate LLMs into their network management workflows.</p>
-
-                <h4 class="mt-3">Topics Covered</h4>
-                <ul class="topic-list">
-                    <li>AI Agentic workflow fundamentals</li>
-                    <li>Building RAG pipelines for network documentation</li>
-                    <li>Live prototype demonstration</li>
-                    <li>Contextual AI for network troubleshooting</li>
-                    <li>Integration with existing infrastructure</li>
-                    <li>Best practices for production deployment</li>
-                    <li>Security considerations</li>
-                </ul>
-
-                <h4 class="mt-3">Prerequisites</h4>
-                <ul class="topic-list">
-                    <li>Completion of Session 1 (or equivalent knowledge)</li>
-                    <li>Basic Python knowledge (helpful but not required)</li>
-                    <li>Access to a test environment</li>
-                </ul>
-
-                <h4 class="mt-3">Learning Outcomes</h4>
-                <ul class="topic-list">
-                    <li>Build basic RAG pipelines</li>
-                    <li>Deploy LLMs for network operations use cases</li>
-                    <li>Create contextual AI assistants for documentation</li>
-                    <li>Implement security best practices</li>
-                </ul>
+                <div class="ws-card-body">
+                    <div class="ws-col">
+                        <h4>Topics Covered</h4>
+                        <ul class="topic-list">
+                            <li>AI Agentic workflow fundamentals</li>
+                            <li>Building RAG pipelines for network documentation</li>
+                            <li>Live prototype demonstration</li>
+                            <li>Contextual AI for network troubleshooting</li>
+                            <li>Integration with existing infrastructure</li>
+                            <li>Best practices for production deployment</li>
+                            <li>Security considerations</li>
+                        </ul>
+                    </div>
+                    <div class="ws-col">
+                        <h4>Prerequisites</h4>
+                        <ul class="topic-list">
+                            <li>Completion of Session 1 (or equivalent knowledge)</li>
+                            <li>Basic Python knowledge (helpful but not required)</li>
+                            <li>Access to a test environment</li>
+                        </ul>
+                        <h4 class="mt-3">Learning Outcomes</h4>
+                        <ul class="topic-list">
+                            <li>Build basic RAG pipelines</li>
+                            <li>Deploy LLMs for network operations use cases</li>
+                            <li>Create contextual AI assistants for documentation</li>
+                            <li>Implement security best practices</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
