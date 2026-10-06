@@ -14,56 +14,77 @@
             margin: 0 auto;
             padding: 2.5rem 1.5rem 4rem;
         }
-        .register-intro {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .register-intro p {
-            max-width: 600px;
-            margin: 0.75rem auto 0;
-            color: var(--color-text-muted, #6b7280);
-        }
-        .form-container {
-            background: var(--color-surface, #fff);
-            border: 1px solid var(--color-border, #e5e7eb);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .form-container iframe {
-            width: 100%;
-            min-height: 820px;
-            border: none;
-            display: block;
-        }
-        .form-fallback {
-            padding: 2.5rem;
-            text-align: center;
-        }
-        .form-fallback p {
+
+        /* ── Language toggle ── */
+        .details-topbar {
+            display: flex;
+            justify-content: flex-end;
             margin-bottom: 1.25rem;
-            color: var(--color-text-muted, #6b7280);
+        }
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--border-color, #e5e7eb);
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.3rem 0.75rem;
+            color: var(--text-light, #6b7280);
+            transition: background 0.15s, color 0.15s;
+            font-size: inherit;
+            font-weight: inherit;
+            font-family: inherit;
+            letter-spacing: 0.04em;
+        }
+        .lang-btn.active {
+            background: var(--primary-color, #2563eb);
+            color: #fff;
+        }
+        .lang-btn:not(.active):hover {
+            background: var(--light-bg, #f3f4f6);
+            color: var(--text-color, #111);
+        }
+        .lang-divider {
+            width: 1px;
+            height: 28px;
+            background: var(--border-color, #e5e7eb);
         }
 
-        /* Workshop details block */
+        /* ── Workshop details ── */
         .workshop-details {
             background: var(--color-surface, #fff);
-            border: 1px solid var(--color-border, #e5e7eb);
+            border: 1px solid var(--border-color, #e5e7eb);
             border-radius: 12px;
             padding: 2rem 2.5rem;
             margin-bottom: 2rem;
+            transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.4s ease;
+            overflow: hidden;
+        }
+        .workshop-details.hiding {
+            opacity: 0;
+            transform: translateY(-12px);
+            pointer-events: none;
+        }
+        .workshop-details.hidden {
+            display: none;
         }
         .workshop-details h2 {
             margin: 0 0 0.25rem;
         }
         .workshop-subtitle {
-            color: var(--color-text-muted, #6b7280);
+            color: var(--text-light, #6b7280);
             font-size: 1.05rem;
             margin: 0 0 1.75rem;
         }
         .workshop-meta {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-bottom: 1.75rem;
         }
@@ -82,10 +103,10 @@
             flex-direction: column;
         }
         .workshop-meta-item strong {
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--color-text-muted, #6b7280);
+            letter-spacing: 0.06em;
+            color: var(--text-light, #6b7280);
         }
         .workshop-meta-item span {
             font-size: 0.95rem;
@@ -120,7 +141,101 @@
         .workshop-org {
             margin: 1rem 0 0;
             font-size: 0.85rem;
-            color: var(--color-text-muted, #6b7280);
+            color: var(--text-light, #6b7280);
+        }
+
+        /* ── CTA button row ── */
+        .details-cta {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-color, #e5e7eb);
+        }
+        .btn-continue {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color, #2563eb);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-continue:hover {
+            background: var(--primary-dark, #1d4ed8);
+            transform: translateY(-2px);
+        }
+        .btn-continue svg {
+            transition: transform 0.2s;
+        }
+        .btn-continue:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* ── Form section ── */
+        .form-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .form-section.visible {
+            display: block;
+        }
+        .form-section.shown {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .form-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--primary-color, #2563eb);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .form-back:hover {
+            text-decoration: underline;
+        }
+        .form-intro {
+            margin-bottom: 1.5rem;
+        }
+        .form-intro p {
+            color: var(--text-light, #6b7280);
+            font-size: 0.95rem;
+        }
+
+        /* ── Seamless iframe ── */
+        .form-embed {
+            width: 100%;
+        }
+        .form-embed iframe {
+            width: 100%;
+            min-height: 900px;
+            border: none;
+            display: block;
+            background: transparent;
+        }
+        .form-direct-link {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            color: var(--text-light, #6b7280);
+        }
+        .form-direct-link a {
+            color: var(--primary-color, #2563eb);
         }
     </style>
 </head>
@@ -158,103 +273,128 @@
         <div class="breadcrumb">
             <a href="index.html">Home</a>
             <span>/</span>
-            <span>Register</span>
+            <span data-i18n="breadcrumb">Register</span>
         </div>
-        <h1>Workshop Registration</h1>
-        <p>Sign up to participate in LLMNetOps training programs</p>
+        <h1 data-i18n="pageTitle">Workshop Registration</h1>
+        <p data-i18n="pageSubtitle">Sign up to participate in LLMNetOps training programs</p>
     </section>
 
-    <!-- Registration Form -->
     <div class="register-wrapper">
-        <!-- Workshop Details -->
-        <div class="workshop-details">
+
+        <!-- ── Workshop Details ── -->
+        <div class="workshop-details" id="workshop-details">
+
+            <div class="details-topbar">
+                <div class="lang-toggle" role="group" aria-label="Language selector">
+                    <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+                    <div class="lang-divider" aria-hidden="true"></div>
+                    <button class="lang-btn" data-lang="id" aria-pressed="false">ID</button>
+                </div>
+            </div>
+
             <h2>LLMNetOps Workshop</h2>
-            <p class="workshop-subtitle">Hands-on Training on Privacy-Aware AI for Network Operations</p>
+            <p class="workshop-subtitle" data-i18n="subtitle">Hands-on Training on Privacy-Aware AI for Network Operations</p>
 
             <div class="workshop-meta">
                 <div class="workshop-meta-item">
                     <span class="workshop-meta-icon">📅</span>
                     <div>
-                        <strong>Date</strong>
+                        <strong data-i18n="labelDate">Date</strong>
                         <span>6–7 November 2026</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
                     <span class="workshop-meta-icon">📍</span>
                     <div>
-                        <strong>Location</strong>
+                        <strong data-i18n="labelLocation">Location</strong>
                         <span>Hotel Ijen Suites Malang, Jawa Timur</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
                     <span class="workshop-meta-icon">🎟️</span>
                     <div>
-                        <strong>Fee</strong>
-                        <span>Free of charge</span>
+                        <strong data-i18n="labelFee">Fee</strong>
+                        <span data-i18n="valueFee">Free of charge</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
                     <span class="workshop-meta-icon">👥</span>
                     <div>
-                        <strong>Seats</strong>
-                        <span>±40 participants</span>
+                        <strong data-i18n="labelSeats">Seats</strong>
+                        <span data-i18n="valueSeats">±40 participants</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
                     <span class="workshop-meta-icon">⏰</span>
                     <div>
-                        <strong>Registration Deadline</strong>
-                        <span>31 October 2026</span>
+                        <strong data-i18n="labelDeadline">Registration Deadline</strong>
+                        <span data-i18n="valueDeadline">31 October 2026</span>
                     </div>
                 </div>
             </div>
 
             <div class="workshop-benefits">
-                <h3>What you will get</h3>
+                <h3 data-i18n="benefitsTitle">What you will get</h3>
                 <ul>
-                    <li>Training materials &amp; technical guides</li>
-                    <li>Access to LLMNetOps resource repository</li>
-                    <li>Certificate of participation</li>
-                    <li>Access to hands-on lab</li>
+                    <li data-i18n="benefit1">Training materials &amp; technical guides</li>
+                    <li data-i18n="benefit2">Access to LLMNetOps resource repository</li>
+                    <li data-i18n="benefit3">Certificate of participation</li>
+                    <li data-i18n="benefit4">Access to hands-on lab</li>
                 </ul>
             </div>
 
             <div class="workshop-notice">
-                <strong>⚠️ Please note:</strong> Accommodation and transportation are not covered by the organiser. Participants are responsible for their own travel and lodging arrangements.
+                <strong data-i18n="notice1Label">⚠️ Please note:</strong>
+                <span data-i18n="notice1Body"> Accommodation and transportation are not covered by the organiser. Participants are responsible for their own travel and lodging arrangements.</span>
             </div>
 
             <div class="workshop-notice workshop-notice-info">
-                <strong>📌 Selection process:</strong> Registrations will be reviewed by the committee. Confirmation of participation will be sent by email. The committee reserves the right to manage the composition of participants per institution to ensure equitable representation.
+                <strong data-i18n="notice2Label">📌 Selection process:</strong>
+                <span data-i18n="notice2Body"> Registrations will be reviewed by the committee. Confirmation of participation will be sent by email. The committee reserves the right to manage the composition of participants per institution to ensure equitable representation.</span>
             </div>
 
-            <p class="workshop-org">This workshop is part of the LLMNetOps project funded by ISIF Asia 2025, implemented by Universitas Brawijaya in collaboration with IDREN.</p>
+            <p class="workshop-org" data-i18n="orgNote">This workshop is part of the LLMNetOps project funded by ISIF Asia 2025, implemented by Universitas Brawijaya in collaboration with IDREN.</p>
+
+            <div class="details-cta">
+                <button class="btn-continue" id="btn-continue" aria-label="Continue to registration form">
+                    <span data-i18n="ctaBtn">Continue to Register</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
-        <div class="register-intro">
-            <p>Fill in the form below to register. The committee will review your application and send a confirmation to your email.</p>
+        <!-- ── Form Section ── -->
+        <div class="form-section" id="form-section">
+
+            <button class="form-back" id="btn-back" aria-label="Back to workshop details">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span data-i18n="backBtn">Back to details</span>
+            </button>
+
+            <div class="form-intro">
+                <p data-i18n="formIntro">Fill in the form below to register. The committee will review your application and send a confirmation to your email.</p>
+            </div>
+
+            <div class="form-embed">
+                <iframe
+                    id="registration-iframe"
+                    src="https://forms.gle/f2fdvGHMF52CNvF89"
+                    title="LLMNetOps Workshop Registration Form"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="form-direct-link">
+                <span data-i18n="formTrouble">Having trouble?</span>
+                <a href="https://forms.gle/f2fdvGHMF52CNvF89" target="_blank" rel="noopener noreferrer" data-i18n="formDirectLink">Open form in a new tab →</a>
+            </p>
         </div>
 
-        <div class="form-container" id="form-container">
-            <iframe
-                id="registration-iframe"
-                src="https://forms.gle/f2fdvGHMF52CNvF89"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
-                title="LLMNetOps Workshop Registration Form"
-                loading="lazy">
-            </iframe>
-            <noscript>
-                <div class="form-fallback">
-                    <p>The registration form could not be loaded in your browser.</p>
-                    <a href="https://forms.gle/f2fdvGHMF52CNvF89" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open Registration Form</a>
-                </div>
-            </noscript>
-        </div>
-        <p style="text-align:center; margin-top:1rem; font-size:0.9rem; color:var(--color-text-muted,#6b7280);">
-            Having trouble with the form?
-            <a href="https://forms.gle/f2fdvGHMF52CNvF89" target="_blank" rel="noopener noreferrer">Open it directly in a new tab →</a>
-        </p>
     </div>
 
     <!-- Footer -->
@@ -302,5 +442,129 @@
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    <script>
+    (function () {
+        /* ── Translations ── */
+        const i18n = {
+            en: {
+                breadcrumb:   'Register',
+                pageTitle:    'Workshop Registration',
+                pageSubtitle: 'Sign up to participate in LLMNetOps training programs',
+                subtitle:     'Hands-on Training on Privacy-Aware AI for Network Operations',
+                labelDate:    'Date',
+                labelLocation:'Location',
+                labelFee:     'Fee',
+                valueFee:     'Free of charge',
+                labelSeats:   'Seats',
+                valueSeats:   '±40 participants',
+                labelDeadline:'Registration Deadline',
+                valueDeadline:'31 October 2026',
+                benefitsTitle:'What you will get',
+                benefit1:     'Training materials & technical guides',
+                benefit2:     'Access to LLMNetOps resource repository',
+                benefit3:     'Certificate of participation',
+                benefit4:     'Access to hands-on lab',
+                notice1Label: '⚠️ Please note:',
+                notice1Body:  ' Accommodation and transportation are not covered by the organiser. Participants are responsible for their own travel and lodging arrangements.',
+                notice2Label: '📌 Selection process:',
+                notice2Body:  ' Registrations will be reviewed by the committee. Confirmation of participation will be sent by email. The committee reserves the right to manage the composition of participants per institution to ensure equitable representation.',
+                orgNote:      'This workshop is part of the LLMNetOps project funded by ISIF Asia 2025, implemented by Universitas Brawijaya in collaboration with IDREN.',
+                ctaBtn:       'Continue to Register',
+                backBtn:      'Back to details',
+                formIntro:    'Fill in the form below to register. The committee will review your application and send a confirmation to your email.',
+                formTrouble:  'Having trouble?',
+                formDirectLink: 'Open form in a new tab →',
+            },
+            id: {
+                breadcrumb:   'Pendaftaran',
+                pageTitle:    'Pendaftaran Workshop',
+                pageSubtitle: 'Daftarkan diri Anda untuk program pelatihan LLMNetOps',
+                subtitle:     'Pelatihan Langsung tentang AI Berbasis Privasi untuk Operasi Jaringan',
+                labelDate:    'Tanggal',
+                labelLocation:'Lokasi',
+                labelFee:     'Biaya',
+                valueFee:     'Gratis',
+                labelSeats:   'Kursi',
+                valueSeats:   '±40 peserta',
+                labelDeadline:'Batas Pendaftaran',
+                valueDeadline:'31 Oktober 2026',
+                benefitsTitle:'Yang akan Anda dapatkan',
+                benefit1:     'Materi pelatihan & panduan teknis',
+                benefit2:     'Akses ke repositori sumber daya LLMNetOps',
+                benefit3:     'Sertifikat keikutsertaan',
+                benefit4:     'Akses ke hands-on lab',
+                notice1Label: '⚠️ Perhatian:',
+                notice1Body:  ' Akomodasi dan transportasi tidak ditanggung penyelenggara. Peserta bertanggung jawab atas perjalanan dan penginapan masing-masing.',
+                notice2Label: '📌 Proses seleksi:',
+                notice2Body:  ' Pendaftaran akan ditinjau oleh panitia. Konfirmasi keikutsertaan akan dikirimkan melalui email. Panitia berhak mengatur komposisi peserta per institusi demi pemerataan.',
+                orgNote:      'Workshop ini merupakan bagian dari proyek LLMNetOps yang didanai oleh ISIF Asia 2025, dilaksanakan oleh Universitas Brawijaya bersama IDREN.',
+                ctaBtn:       'Lanjut Daftar',
+                backBtn:      'Kembali ke detail',
+                formIntro:    'Isi formulir di bawah ini untuk mendaftar. Panitia akan meninjau pendaftaran Anda dan mengirimkan konfirmasi ke email Anda.',
+                formTrouble:  'Formulir tidak tampil?',
+                formDirectLink: 'Buka formulir di tab baru →',
+            }
+        };
+
+        let currentLang = 'en';
+
+        function applyLang(lang) {
+            const dict = i18n[lang];
+            document.querySelectorAll('[data-i18n]').forEach(function (el) {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) {
+                    el.textContent = dict[key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                const active = btn.getAttribute('data-lang') === lang;
+                btn.classList.toggle('active', active);
+                btn.setAttribute('aria-pressed', String(active));
+            });
+            document.documentElement.lang = lang;
+            currentLang = lang;
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                applyLang(btn.getAttribute('data-lang'));
+            });
+        });
+
+        /* ── Show / hide form ── */
+        const details  = document.getElementById('workshop-details');
+        const formSec  = document.getElementById('form-section');
+        const btnCont  = document.getElementById('btn-continue');
+        const btnBack  = document.getElementById('btn-back');
+
+        btnCont.addEventListener('click', function () {
+            details.classList.add('hiding');
+            setTimeout(function () {
+                details.classList.add('hidden');
+                formSec.classList.add('visible');
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        formSec.classList.add('shown');
+                    });
+                });
+                window.scrollTo({ top: formSec.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+            }, 320);
+        });
+
+        btnBack.addEventListener('click', function () {
+            formSec.classList.remove('shown');
+            setTimeout(function () {
+                formSec.classList.remove('visible');
+                details.classList.remove('hidden');
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        details.classList.remove('hiding');
+                    });
+                });
+                window.scrollTo({ top: details.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+            }, 320);
+        });
+    })();
+    </script>
 </body>
 </html>
