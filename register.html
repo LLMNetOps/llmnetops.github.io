@@ -94,10 +94,29 @@
             gap: 0.75rem;
         }
         .workshop-meta-icon {
-            font-size: 1.3rem;
-            line-height: 1.4;
             flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 0.1rem;
+            color: var(--primary-color, #2563eb);
         }
+        .workshop-meta-icon svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+        .workshop-notice-icon {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            margin-top: 0.15rem;
+        }
+        .workshop-notice {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+        .workshop-notice-body { flex: 1; }
         .workshop-meta-item div {
             display: flex;
             flex-direction: column;
@@ -133,10 +152,17 @@
             margin-bottom: 0.75rem;
             font-size: 0.9rem;
             line-height: 1.6;
+            align-items: flex-start;
         }
         .workshop-notice.workshop-notice-info {
             background: #eff6ff;
             border-left-color: #3b82f6;
+        }
+        .workshop-notice .workshop-notice-icon {
+            color: #f59e0b;
+        }
+        .workshop-notice.workshop-notice-info .workshop-notice-icon {
+            color: #3b82f6;
         }
         .workshop-org {
             margin: 1rem 0 0;
@@ -356,35 +382,45 @@
 
             <div class="workshop-meta">
                 <div class="workshop-meta-item">
-                    <span class="workshop-meta-icon">📅</span>
+                    <span class="workshop-meta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    </span>
                     <div>
                         <strong data-i18n="labelDate">Date</strong>
                         <span>6–7 November 2026</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
-                    <span class="workshop-meta-icon">📍</span>
+                    <span class="workshop-meta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    </span>
                     <div>
                         <strong data-i18n="labelLocation">Location</strong>
                         <span>Hotel Ijen Suites Malang, Jawa Timur</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
-                    <span class="workshop-meta-icon">🎟️</span>
+                    <span class="workshop-meta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                    </span>
                     <div>
                         <strong data-i18n="labelFee">Fee</strong>
                         <span data-i18n="valueFee">Free of charge</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
-                    <span class="workshop-meta-icon">👥</span>
+                    <span class="workshop-meta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </span>
                     <div>
                         <strong data-i18n="labelSeats">Seats</strong>
                         <span data-i18n="valueSeats">±40 participants</span>
                     </div>
                 </div>
                 <div class="workshop-meta-item">
-                    <span class="workshop-meta-icon">⏰</span>
+                    <span class="workshop-meta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </span>
                     <div>
                         <strong data-i18n="labelDeadline">Registration Deadline</strong>
                         <span data-i18n="valueDeadline">31 October 2026</span>
@@ -403,13 +439,19 @@
             </div>
 
             <div class="workshop-notice">
-                <strong data-i18n="notice1Label">⚠️ Please note:</strong>
-                <span data-i18n="notice1Body"> Accommodation and transportation are not covered by the organiser. Participants are responsible for their own travel and lodging arrangements.</span>
+                <svg class="workshop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="workshop-notice-body">
+                    <strong data-i18n="notice1Label">Please note:</strong>
+                    <span data-i18n="notice1Body"> Accommodation and transportation are not covered by the organiser. Participants are responsible for their own travel and lodging arrangements.</span>
+                </div>
             </div>
 
             <div class="workshop-notice workshop-notice-info">
-                <strong data-i18n="notice2Label">📌 Selection process:</strong>
-                <span data-i18n="notice2Body"> Registrations will be reviewed by the committee. Confirmation of participation will be sent by email. The committee reserves the right to manage the composition of participants per institution to ensure equitable representation.</span>
+                <svg class="workshop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="workshop-notice-body">
+                    <strong data-i18n="notice2Label">Selection process:</strong>
+                    <span data-i18n="notice2Body"> Registrations will be reviewed by the committee. Confirmation of participation will be sent by email. The committee reserves the right to manage the composition of participants per institution to ensure equitable representation.</span>
+                </div>
             </div>
 
             <p class="workshop-org" data-i18n="orgNote">This workshop is part of the LLMNetOps project funded by ISIF Asia 2025, implemented by Universitas Brawijaya in collaboration with IDREN.</p>
@@ -524,9 +566,9 @@
                 benefit2:     'Access to LLMNetOps resource repository',
                 benefit3:     'Certificate of participation',
                 benefit4:     'Access to hands-on lab',
-                notice1Label: '⚠️ Please note:',
+                notice1Label: 'Please note:',
                 notice1Body:  ' Accommodation and transportation are not covered by the organiser. Participants are responsible for their own travel and lodging arrangements.',
-                notice2Label: '📌 Selection process:',
+                notice2Label: 'Selection process:',
                 notice2Body:  ' Registrations will be reviewed by the committee. Confirmation of participation will be sent by email. The committee reserves the right to manage the composition of participants per institution to ensure equitable representation.',
                 orgNote:      'This workshop is part of the LLMNetOps project funded by ISIF Asia 2025, implemented by Universitas Brawijaya in collaboration with IDREN.',
                 ctaBtn:       'Continue to Register',
@@ -554,9 +596,9 @@
                 benefit2:     'Akses ke repositori sumber daya LLMNetOps',
                 benefit3:     'Sertifikat keikutsertaan',
                 benefit4:     'Akses ke hands-on lab',
-                notice1Label: '⚠️ Perhatian:',
+                notice1Label: 'Perhatian:',
                 notice1Body:  ' Akomodasi dan transportasi tidak ditanggung penyelenggara. Peserta bertanggung jawab atas perjalanan dan penginapan masing-masing.',
-                notice2Label: '📌 Proses seleksi:',
+                notice2Label: 'Proses seleksi:',
                 notice2Body:  ' Pendaftaran akan ditinjau oleh panitia. Konfirmasi keikutsertaan akan dikirimkan melalui email. Panitia berhak mengatur komposisi peserta per institusi demi pemerataan.',
                 orgNote:      'Workshop ini merupakan bagian dari proyek LLMNetOps yang didanai oleh ISIF Asia 2025, dilaksanakan oleh Universitas Brawijaya bersama IDREN.',
                 ctaBtn:       'Lanjut Daftar',
