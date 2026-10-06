@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavigation();
+    initDropdowns();
     initScrollAnimations();
     initBackToTop();
     initCurrentYear();
