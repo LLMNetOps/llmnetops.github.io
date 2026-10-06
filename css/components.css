@@ -973,27 +973,44 @@
     font-style: italic;
 }
 
-/* Register nav button */
+/* Register nav button — orange */
 .nav-links a.nav-register {
-    background: var(--primary-color);
-    color: var(--white) !important;
+    background: #f97316;
+    color: #fff !important;
     padding: 0.4rem 0.9rem;
     border-radius: 6px;
     font-weight: 600;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(249,115,22,0.35);
 }
 .nav-links a.nav-register:hover {
-    background: var(--primary-dark);
+    background: #ea580c;
     transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(249,115,22,0.45);
 }
 .nav-links a.nav-register::after {
     display: none !important;
 }
 
+/* Hero "Join Workshop" button — orange */
+.btn-register {
+    background: #f97316 !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    box-shadow: 0 2px 12px rgba(249,115,22,0.4);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+}
+.btn-register:hover {
+    background: #ea580c !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(249,115,22,0.5) !important;
+    color: #fff !important;
+}
+
 /* Explore highlight card */
 .explore-link-highlight {
-    border: 2px solid var(--primary-color) !important;
+    border: 2px solid #f97316 !important;
 }
 .explore-link-highlight strong {
-    color: var(--primary-color);
+    color: #f97316;
 }
