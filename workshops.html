@@ -78,6 +78,64 @@
             .ws-connector { width: 2px; height: 24px; margin: 0; }
         }
 
+        /* ── Rundown table ── */
+        .rundown-section { margin-bottom: 3rem; }
+        .rundown-section h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .rundown-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+        .rundown-table thead th {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 0.65rem 1rem;
+            text-align: left;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .rundown-table tbody tr:nth-child(even) { background: var(--bg-light, #f8f9fa); }
+        .rundown-table tbody tr:hover { background: rgba(var(--primary-rgb, 30,80,160), 0.06); }
+        .rundown-table td {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+        .rundown-table tbody tr:last-child td { border-bottom: none; }
+        .rundown-table td.time {
+            white-space: nowrap;
+            font-weight: 600;
+            color: var(--primary-color);
+            width: 130px;
+        }
+        .rundown-table tr.break-row td {
+            background: var(--secondary-color);
+            color: #fff;
+            font-weight: 700;
+        }
+        .rundown-table tr.break-row td.time { color: #fff; }
+        .rundown-table tr.session-row td.activity { font-weight: 600; }
+        @media (max-width: 480px) {
+            .rundown-table td.time { width: 90px; font-size: 0.82rem; }
+            .rundown-table td { padding: 0.5rem 0.75rem; font-size: 0.85rem; }
+        }
+
         /* Compact workshop info strip */
         .ws-info-grid {
             display: grid;
@@ -340,6 +398,110 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rundown -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Rundown Acara</h2>
+            <p class="section-subtitle">Jadwal lengkap kegiatan workshop selama dua hari</p>
+
+            <!-- Day 1 -->
+            <div class="rundown-section">
+                <h3>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    Hari 1 — Jumat, 6 November 2026
+                </h3>
+                <table class="rundown-table">
+                    <thead>
+                        <tr>
+                            <th>Waktu</th>
+                            <th>Kegiatan / Sesi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time">08.00–08.30</td>
+                            <td class="activity">Registrasi</td>
+                        </tr>
+                        <tr>
+                            <td class="time">08.30–08.50</td>
+                            <td class="activity">Sambutan &amp; Pembukaan Resmi</td>
+                        </tr>
+                        <tr>
+                            <td class="time">08.50–09.00</td>
+                            <td class="activity">Foto Bersama</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">09.00–11.00</td>
+                            <td class="activity">Sesi 1: Manajemen Jaringan &amp; Permasalahannya</td>
+                        </tr>
+                        <tr class="break-row">
+                            <td class="time">11.00–13.00</td>
+                            <td class="activity">ISHOMA (Shalat Jumat)</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">13.00–14.30</td>
+                            <td class="activity">Sesi 2: Infrastruktur Jaringan: Membangun Lab Jaringan Virtual</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">14.30–15.45</td>
+                            <td class="activity">Sesi 3: Instalasi dan Aktivasi Infrastruktur LLM Lokal</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">15.45–17.30</td>
+                            <td class="activity">Sesi 4: Instalasi LLMNetOps Stack</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="rundown-section">
+                <h3>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    Hari 2 — Sabtu, 7 November 2026
+                </h3>
+                <table class="rundown-table">
+                    <thead>
+                        <tr>
+                            <th>Waktu</th>
+                            <th>Kegiatan / Sesi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time">08.30–09.00</td>
+                            <td class="activity">Pembukaan Hari 2 — Recap</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">09.00–10.30</td>
+                            <td class="activity">Sesi 5: Studi Kasus Operasional Infrastruktur Jaringan — Bagian 1</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">10.30–12.00</td>
+                            <td class="activity">Sesi 6: Studi Kasus Operasional Infrastruktur Jaringan — Bagian 2</td>
+                        </tr>
+                        <tr class="break-row">
+                            <td class="time">12.00–13.00</td>
+                            <td class="activity">ISHOMA</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">13.00–13.50</td>
+                            <td class="activity">Sesi 7: AI for Cyber Security</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">13.50–14.35</td>
+                            <td class="activity">Sesi 8: Generative AI untuk Operasional Umum Kampus</td>
+                        </tr>
+                        <tr class="session-row">
+                            <td class="time">14.35–15.00</td>
+                            <td class="activity">Sesi 9: Penutupan</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
