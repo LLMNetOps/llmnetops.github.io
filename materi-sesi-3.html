@@ -88,7 +88,9 @@
                 </ul>
             </div>
 
-            <!-- Isi src di bawah dengan URL "Publish to web" Google Docs (…/pub?embedded=true) -->
+            <!-- Isi src di bawah dengan URL Google Docs:
+                 - tampilan per halaman: https://docs.google.com/document/d/<ID>/preview (dokumen di-share "Anyone with the link")
+                 - tampilan web: URL "Publish to web" (…/pub?embedded=true) -->
             <div class="doc-viewer">
                 <div class="doc-viewer-bar">
                     <span class="doc-viewer-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Dokumen Materi — Sesi 3</span>
@@ -197,6 +199,8 @@
                 box.querySelector('.doc-placeholder').remove();
                 box.classList.add('has-doc');
                 if (link) { link.href = src.replace('?embedded=true', ''); link.hidden = false; }
+                // A /preview URL is Google's own paged viewer: it is responsive, so no scaling.
+                if (/\/preview(\?|$)/.test(src)) return;
                 // Google Docs pages are ~816px wide: scale the frame up so the page fills the box.
                 var DOC_WIDTH = 816;
                 var fit = function () {
