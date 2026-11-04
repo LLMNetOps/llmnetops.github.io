@@ -1,0 +1,172 @@
+/* ── Workshop materials (resources.html + materi-*.html) ── */
+
+/* Cards on resources.html */
+.materi-grid .resource-card {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.materi-grid .resource-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+.materi-grid .resource-type { align-self: flex-start; }
+.materi-grid .resource-meta .materi-open {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.type-prep {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* Session page info strip */
+.materi-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+.materi-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.materi-info svg { color: var(--primary-color); }
+
+.materi-summary {
+    margin-bottom: 1.5rem;
+}
+.materi-summary ul { margin-top: 0.75rem; }
+
+/* Embedded Google Doc, framed like a document viewer */
+.doc-viewer {
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: #e2e8f0;
+}
+.doc-viewer-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
+    background: var(--secondary-color);
+    color: #fff;
+    font-size: 0.85rem;
+}
+.doc-viewer-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-right: auto;
+}
+.doc-viewer-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #cbd5e1;
+}
+.doc-viewer-hint svg { animation: doc-hint-bounce 1.6s ease-in-out infinite; }
+@keyframes doc-hint-bounce {
+    0%, 100% { transform: translateY(-2px); }
+    50% { transform: translateY(2px); }
+}
+.doc-viewer:not(:has(.has-doc)) .doc-viewer-hint { display: none; }
+.doc-viewer-bar .doc-open-link {
+    color: #fff;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+    text-decoration: none;
+}
+.doc-viewer-bar .doc-open-link:hover { background: rgba(255, 255, 255, 0.12); }
+.doc-viewer-body {
+    padding: 1rem;
+}
+.doc-embed {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.15), 0 4px 12px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+.doc-embed.has-doc {
+    height: 80vh;
+    min-height: 600px;
+}
+/* Soft fade at the bottom edge hints that the document continues (scrollable). */
+.doc-embed.has-doc::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(226, 232, 240, 0.9));
+    pointer-events: none;
+}
+/* Google Docs renders its page at a fixed width (~816px); the script scales the
+   iframe so that page fills the container. Without JS it is simply full size. */
+.doc-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #fff;
+    transform-origin: 0 0;
+}
+.doc-placeholder {
+    padding: 4rem 1.5rem;
+    text-align: center;
+    color: var(--text-light);
+}
+.doc-placeholder strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    margin-bottom: 0.35rem;
+}
+
+/* Prev / next session navigation */
+.materi-pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.materi-pager a {
+    flex: 1 1 220px;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+.materi-pager a:hover { border-color: var(--primary-color); }
+.materi-pager a small {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+}
+.materi-pager a.next { text-align: right; }
+
+@media (max-width: 640px) {
+    .doc-embed.has-doc { height: 75vh; min-height: 480px; }
+    .doc-viewer-body { padding: 0.5rem; }
+    .doc-viewer-hint { display: none; }
+}

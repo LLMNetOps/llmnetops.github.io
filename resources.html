@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/materi.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -67,24 +68,11 @@
         <p>Training modules, case studies, and documentation for privacy-aware AI deployment</p>
     </section>
 
-    <!-- Resource Filters -->
-    <section>
-        <div class="container">
-            <div class="resource-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="training_module">Training Modules</button>
-                <button class="filter-btn" data-filter="case_study">Case Studies</button>
-                <button class="filter-btn" data-filter="report">Reports</button>
-                <button class="filter-btn" data-filter="whitepaper">White Papers</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Training Modules -->
+    <!-- Workshop Materials -->
     <section class="about">
         <div class="container">
-            <h2 class="section-title">Training Modules</h2>
-            <p class="section-subtitle">Comprehensive curriculum on locally-hosted LLMs for network operations</p>
+            <h2 class="section-title">Materi Workshop</h2>
+            <p class="section-subtitle">Materi persiapan dan sesi hands-on sesuai rundown workshop 6–7 November 2026</p>
 
             <div class="alert alert-info mb-4">
                 <span class="alert-icon">🧪</span>
@@ -94,64 +82,66 @@
                 </div>
             </div>
 
-            <div class="alert alert-info mb-4">
-                <span class="alert-icon">📚</span>
-                <div>
-                    <strong>Coming Soon</strong><br>
-                    Training modules are currently in development and will be available after the first workshop session.
-                </div>
-            </div>
-
-            <div class="card-grid">
-                <div class="resource-card">
-                    <span class="resource-type type-module">Training Module</span>
-                    <h3>Module 1: Introduction to Large Language Models</h3>
-                    <p>Comprehensive introduction to LLMs covering architecture, capabilities, and applications in network operations.</p>
+            <div class="card-grid materi-grid">
+                <a href="materi-persiapan.html" class="resource-card">
+                    <span class="resource-type type-prep">Sebelum Workshop</span>
+                    <h3>Persiapan Peserta</h3>
+                    <p>Kebutuhan laptop, setup VM peserta (Ubuntu, Docker, WireGuard), bekal pengetahuan, dan daftar periksa sebelum berangkat.</p>
                     <div class="resource-meta">
-                        <span>🌐 Bilingual (ID/EN)</span>
-                        <span class="status-badge status-not-started">Coming Soon</span>
+                        <span>🕒 Sebelum 6 Nov</span>
+                        <span class="materi-open">Buka Materi →</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="resource-card">
-                    <span class="resource-type type-module">Training Module</span>
-                    <h3>Module 2: Privacy-Aware AI Deployment</h3>
-                    <p>Deep dive into privacy considerations, data protection, and institutional autonomy in AI deployment.</p>
+                <a href="materi-sesi-2.html" class="resource-card">
+                    <span class="resource-type type-module">Hari 1 · Sesi 2</span>
+                    <h3>Infrastruktur Jaringan: Membangun Lab Jaringan Virtual</h3>
+                    <p>Instalasi Docker, deploy Containerlab, dan membangun topologi lab virtual (R1, R2, R3, H1, H2).</p>
                     <div class="resource-meta">
-                        <span>🌐 Bilingual (ID/EN)</span>
-                        <span class="status-badge status-not-started">Coming Soon</span>
+                        <span>🕒 Jumat · 13.00–14.30</span>
+                        <span class="materi-open">Buka Materi →</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="resource-card">
-                    <span class="resource-type type-module">Training Module</span>
-                    <h3>Module 3: RAG Pipelines for Network Documentation</h3>
-                    <p>Practical guide to building Retrieval-Augmented Generation pipelines for network documentation and troubleshooting.</p>
+                <a href="materi-sesi-3.html" class="resource-card">
+                    <span class="resource-type type-module">Hari 1 · Sesi 3</span>
+                    <h3>Instalasi dan Aktivasi Infrastruktur LLM Lokal</h3>
+                    <p>Infrastruktur LLM lokal, distribusi token API, dan hands-on interaksi dengan model via API.</p>
                     <div class="resource-meta">
-                        <span>🌐 Bilingual (ID/EN)</span>
-                        <span class="status-badge status-not-started">Coming Soon</span>
+                        <span>🕒 Jumat · 14.30–15.45</span>
+                        <span class="materi-open">Buka Materi →</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="resource-card">
-                    <span class="resource-type type-module">Training Module</span>
-                    <h3>Module 4: AI Agentic Workflows</h3>
-                    <p>Advanced module on building AI agents for automated network operations tasks.</p>
+                <a href="materi-sesi-4.html" class="resource-card">
+                    <span class="resource-type type-module">Hari 1 · Sesi 4</span>
+                    <h3>Instalasi LLMNetOps Stack</h3>
+                    <p>Deploy NetOpsAgent + Hermes dan NetOpsUI, lalu verifikasi stack secara end-to-end.</p>
                     <div class="resource-meta">
-                        <span>🌐 Bilingual (ID/EN)</span>
-                        <span class="status-badge status-not-started">Coming Soon</span>
+                        <span>🕒 Jumat · 15.45–17.30</span>
+                        <span class="materi-open">Buka Materi →</span>
                     </div>
-                </div>
+                </a>
 
-                <div class="resource-card">
-                    <span class="resource-type type-module">Training Module</span>
-                    <h3>Module 5: Infrastructure Integration</h3>
-                    <p>Guide to integrating locally-hosted LLMs with existing network infrastructure and monitoring systems.</p>
+                <a href="materi-sesi-5.html" class="resource-card">
+                    <span class="resource-type type-case-study">Hari 2 · Sesi 5</span>
+                    <h3>Studi Kasus Operasional Infrastruktur Jaringan — Bagian 1</h3>
+                    <p>UC1: deteksi &amp; analisis gangguan link. UC2: lookup perangkat &amp; IP manajemen di inventory.</p>
                     <div class="resource-meta">
-                        <span>🌐 Bilingual (ID/EN)</span>
-                        <span class="status-badge status-not-started">Coming Soon</span>
+                        <span>🕒 Sabtu · 09.00–10.30</span>
+                        <span class="materi-open">Buka Materi →</span>
                     </div>
-                </div>
+                </a>
+
+                <a href="materi-sesi-6.html" class="resource-card">
+                    <span class="resource-type type-case-study">Hari 2 · Sesi 6</span>
+                    <h3>Studi Kasus Operasional Infrastruktur Jaringan — Bagian 2</h3>
+                    <p>UC3: audit prefix BGP WAN. UC4: diagnosa DHCP server &amp; tabel lease LAN. Konsep Skills.</p>
+                    <div class="resource-meta">
+                        <span>🕒 Sabtu · 10.30–12.00</span>
+                        <span class="materi-open">Buka Materi →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -330,15 +320,5 @@
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Resource filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                // Add filter logic here when resources are available
-            });
-        });
-    </script>
 </body>
 </html>
