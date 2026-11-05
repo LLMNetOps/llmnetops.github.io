@@ -78,6 +78,44 @@
             .ws-connector { width: 2px; height: 24px; margin: 0; }
         }
 
+        /* ── Venue card ── */
+        .ws-venue {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 0 0 2.5rem;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+        }
+        .ws-venue-icon { color: var(--primary-color); flex-shrink: 0; display: flex; }
+        .ws-venue-text { flex: 1; min-width: 200px; }
+        .ws-venue-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+        }
+        .ws-venue-name { font-weight: 700; color: var(--secondary-color); font-size: 1.05rem; }
+        .ws-venue-room { font-size: 0.9rem; color: var(--text-color); }
+        .ws-venue-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            background: var(--primary-color);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .ws-venue-btn:hover { opacity: 0.9; }
+
         /* ── Rundown table ── */
         .rundown-section { margin-bottom: 3rem; }
         .rundown-section h3 {
@@ -242,6 +280,22 @@
         <div class="container">
             <h2 class="section-title">Workshop Sessions</h2>
             <p class="section-subtitle">Jadwal lengkap kegiatan workshop selama dua hari</p>
+
+            <!-- Venue -->
+            <div class="ws-venue">
+                <span class="ws-venue-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <div class="ws-venue-text">
+                    <div class="ws-venue-label">Lokasi</div>
+                    <div class="ws-venue-name">Ijen Suites Resort &amp; Convention</div>
+                    <div class="ws-venue-room">Ruang kegiatan: Ballroom 3, Lantai 1</div>
+                </div>
+                <a class="ws-venue-btn" href="https://maps.app.goo.gl/HzrS8MZpW3qYAjjY7" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+                    Buka di Google Maps
+                </a>
+            </div>
 
             <!-- Day 1 -->
             <div class="rundown-section">
