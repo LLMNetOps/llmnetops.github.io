@@ -1,5 +1,61 @@
 [
     {
+        "title": "DTI UB dan IDREN Kembangkan AI Lokal untuk Pengelolaan Jaringan Kampus",
+        "source": "Universitas Brawijaya News",
+        "date": "2026-11-06",
+        "url": "https://prasetya.ub.ac.id/en/dti-ub-dan-idren-kembangkan-ai-lokal-untuk-pengelolaan-jaringan-kampus/",
+        "image": "images/media/prasetya-workshop.png",
+        "summary": "DTI Universitas Brawijaya and IDREN develop locally-hosted AI for campus network management through the LLMNetOps Workshop Series."
+    },
+    {
+        "title": "UB–IDREN Gelar Workshop LLMNetOps: Pemanfaatan AI Lokal untuk Manajemen Jaringan Institusi Riset dan Pendidikan Indonesia",
+        "source": "Malang Post",
+        "date": "2026-11-06",
+        "url": "https://malang-post.com/2026/11/06/ub-idren-gelar-workshop-llmnetops-ai-lokal-manajemen-jaringan/",
+        "image": "images/media/malang-post-workshop.jpg",
+        "summary": "DTI UB bersama IDREN menggelar Workshop LLMNetOps di Hotel Ijen Suites Malang untuk melatih pemanfaatan AI generatif lokal (on-premise) dalam pengelolaan jaringan kampus."
+    },
+    {
+        "title": "UB Kembangkan LLMNetOps, AI Lokal untuk Otomatisasi Pengelolaan Jaringan Kampus",
+        "source": "Beritajatim",
+        "date": "2026-11-06",
+        "url": "https://beritajatim.com/ub-kembangkan-llmnetops-ai-lokal-untuk-otomatisasi-pengelolaan-jaringan-kampus",
+        "image": "images/media/beritajatim-workshop.webp",
+        "summary": "Universitas Brawijaya mengembangkan LLMNetOps, AI lokal untuk membantu administrator jaringan mendeteksi gangguan dan menganalisis perangkat."
+    },
+    {
+        "title": "LLMNetOps UB Dorong Perlindungan Data Pribadi Melalui AI Lokal",
+        "source": "Times Indonesia",
+        "date": "2026-11-06",
+        "url": "https://timesindonesia.co.id/indonesia-positif/616380/llmnetops-ub-dorong-perlindungan-data-pribadi-melalui-ai-lokal",
+        "image": "images/media/times-indonesia-workshop.webp",
+        "summary": "Universitas Brawijaya melalui Direktorat Teknologi Informasi (DTI) mendorong LLMNetOps untuk melindungi data pribadi dengan memanfaatkan AI yang dijalankan secara lokal."
+    },
+    {
+        "title": "DTI UB Kembangkan AI Lokal untuk Pengelolaan Jaringan Kampus",
+        "source": "ANTARA News Jawa Timur",
+        "date": "2026-11-06",
+        "url": "https://jatim.antaranews.com/amp/berita/1115995/dti-ub-kembangkan-ai-lokal-untuk-pengelolaan-jaringan-kampus",
+        "image": "images/media/antara-jatim-workshop.jpg",
+        "summary": "Direktorat Teknologi Informasi (DTI) Universitas Brawijaya mengembangkan sistem AI untuk mendukung pengelolaan dan operasional jaringan kampus."
+    },
+    {
+        "title": "Universitas Brawijaya Kembangkan AI Lokal LLMNetOps untuk Deteksi Gangguan Jaringan Kampus Tanpa Kirim Data ke Server Eksternal",
+        "source": "Pantau",
+        "date": "2026-11-06",
+        "url": "https://www.pantau.com/nasional/377415/universitas-brawijaya-kembangkan-ai-lokal-llmnetops-untuk-deteksi-gangguan-jaringan-kampus-tanpa-kirim-data-ke-server-ekstern",
+        "image": "images/media/pantau-workshop.jpg",
+        "summary": "LLMNetOps membantu mendeteksi gangguan jaringan kampus dengan AI yang berjalan secara lokal, tanpa mengirim data ke server eksternal."
+    },
+    {
+        "title": "Universitas Brawijaya Malang Kembangkan AI Lokal untuk Kelola Jaringan Kampus",
+        "source": "Lingkar.news",
+        "date": "2026-11-06",
+        "url": "https://lingkar.news/jatim/universitas-brawijaya-malang-kembangkan-ai-lokal-untuk-kelola-jaringan-kampus/",
+        "image": "images/media/lingkar-workshop.webp",
+        "summary": "DTI Universitas Brawijaya mengembangkan Large Language Model for Network Operations (LLMNetOps), sistem kecerdasan buatan lokal untuk pengelolaan jaringan kampus."
+    },
+    {
         "title": "DTI UB Holds LLMNetOps Pilot Test with IDREN Partner Universities",
         "source": "Universitas Brawijaya News",
         "date": "2026-10-01",
