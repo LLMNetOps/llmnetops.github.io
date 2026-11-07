@@ -92,6 +92,26 @@
             margin-top: 3px;
         }
 
+        .milestone-sessions {
+            list-style: none;
+            margin: 0.5rem 0 0;
+            padding: 0;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+
+        .milestone-sessions li {
+            padding: 0.15rem 0;
+        }
+
+        .milestone-sessions .session-no {
+            display: inline-block;
+            min-width: 4.25rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
         .milestone-label {
             font-weight: 600;
             color: var(--secondary-color);
@@ -211,13 +231,29 @@
             <h2 class="section-title mt-4">Milestones</h2>
             <ul class="milestones-list">
                 <li class="milestone-item">
+                    <div class="milestone-dot upcoming"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-date">Upcoming</div>
+                        <div class="milestone-label">
+                            Workshop documentation, post-workshop evaluation survey, case studies, and whitepaper.
+                        </div>
+                    </div>
+                </li>
+                <li class="milestone-item">
                     <div class="milestone-dot"></div>
                     <div class="milestone-content">
                         <div class="milestone-date">November 7, 2026</div>
                         <div class="milestone-label">
                             <a href="workshops.html">Onsite Workshop — Day 2</a>
-                            — case studies on campus network operations (Sessions 5–6), AI for Cyber Security, Generative AI for general campus operations, and closing.
+                            — hands-on network operations case studies, AI for cyber security, and generative AI for campus operations.
                         </div>
+                        <ul class="milestone-sessions">
+                            <li><span class="session-no">Session 5</span><a href="materi-sesi-5.html">Network Infrastructure Operations Case Studies — Part 1</a></li>
+                            <li><span class="session-no">Session 6</span><a href="materi-sesi-6.html">Network Infrastructure Operations Case Studies — Part 2</a></li>
+                            <li><span class="session-no">Session 7</span>AI for Cyber Security</li>
+                            <li><span class="session-no">Session 8</span>Generative AI for General Campus Operations</li>
+                            <li><span class="session-no">Session 9</span>Closing</li>
+                        </ul>
                     </div>
                 </li>
                 <li class="milestone-item">
@@ -226,8 +262,15 @@
                         <div class="milestone-date">November 6, 2026</div>
                         <div class="milestone-label">
                             <a href="workshops.html">Onsite Workshop — Day 1</a>
-                            — held at Ballroom 3, Ijen Suites Resort &amp; Convention, Malang; Sessions 1–4 covered network management challenges, a virtual network lab, local LLM infrastructure, and LLMNetOps stack installation, followed by dinner &amp; networking.
+                            — held at Ballroom 3, Ijen Suites Resort &amp; Convention, Malang; building the LLMNetOps stack from the ground up, followed by dinner &amp; networking.
                         </div>
+                        <ul class="milestone-sessions">
+                            <li><span class="session-no">Prep</span><a href="materi-persiapan.html">Participant Preparation</a></li>
+                            <li><span class="session-no">Session 1</span>Network Management &amp; Its Challenges</li>
+                            <li><span class="session-no">Session 2</span><a href="materi-sesi-2.html">Network Infrastructure: Building a Virtual Network Lab</a></li>
+                            <li><span class="session-no">Session 3</span><a href="materi-sesi-3.html">Installing and Activating Local LLM Infrastructure</a></li>
+                            <li><span class="session-no">Session 4</span><a href="materi-sesi-4.html">Installing the LLMNetOps Stack</a></li>
+                        </ul>
                     </div>
                 </li>
                 <li class="milestone-item">
@@ -267,15 +310,6 @@
                         <div class="milestone-label">
                             <a href="news/kickoff-meeting-2025.html">Project Kickoff Meeting</a>
                             — official launch at Universitas Brawijaya; project objectives, team roles, and roadmap established.
-                        </div>
-                    </div>
-                </li>
-                <li class="milestone-item">
-                    <div class="milestone-dot upcoming"></div>
-                    <div class="milestone-content">
-                        <div class="milestone-date">Upcoming</div>
-                        <div class="milestone-label">
-                            Workshop documentation, post-workshop evaluation survey, case studies, and whitepaper.
                         </div>
                     </div>
                 </li>
