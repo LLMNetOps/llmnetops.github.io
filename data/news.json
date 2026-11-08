@@ -85,5 +85,34 @@
                 "caption": "Participants from UMM, UM, UIN Maulana Malik Ibrahim Malang, and UB with the LLMNetOps project team"
             }
         ]
+    },
+    {
+        "id": 4,
+        "slug": "main-workshop-2026",
+        "title": "LLMNetOps Main Workshop Held in Malang with 40 Participants from 24 Institutions",
+        "date": "2026-11-07",
+        "location": "Malang, Indonesia",
+        "category": "Workshop",
+        "excerpt": "The LLMNetOps Main Workshop Series was held on November 6–7, 2026 at Hotel Ijen Suites, Malang, bringing the full hands-on training program to 40 network administrators and technical staff from 24 universities and government institutions across Indonesia.",
+        "image": "images/gallery/day1-group-1.jpg",
+        "content": "<p>The LLMNetOps project team successfully held its <strong>Main Workshop Series</strong> at <strong>Hotel Ijen Suites, Malang</strong>, on <strong>November 6–7, 2026</strong>. The two-day event marked a major milestone in the project’s roadmap, bringing the full training program to <strong>40 network administrators and technical staff from 24 universities and government institutions</strong> across Indonesia.</p><p>This workshop followed a pilot feedback phase conducted at three institutions, whose input shaped the final curriculum and system configuration used here.</p><h3>Opening Ceremony</h3><p>The workshop opened with remarks from representatives of the institutions and agencies that form the backbone of this initiative.</p><p><strong>Dr. Achmad Basuki</strong>, Project Leader of LLMNetOps and lecturer at the Faculty of Computer Science, Universitas Brawijaya, opened the event by framing the core challenge the project was built to address: the growing gap between the complexity of campus network infrastructure and the capacity of teams managing it. He noted that generative AI, deployed locally and without sending data outside institutional networks, offers a practical path forward, and that this workshop represents the team’s commitment to making that path accessible to institutions across IDREN.</p><p><strong>Dr. Didi Rustam</strong>, Head of SPBE Governance and Digital Transformation at the Data and Information Technology Center (Pusdatin), Ministry of Higher Education, Science, and Technology (Kemdiktisaintek), delivered remarks on behalf of the ministry. He highlighted the alignment between the LLMNetOps approach (privacy-preserving, institution-owned AI) and the ministry’s broader digital transformation agenda for the national higher education sector.</p><p><strong>Dr. Widyawan</strong>, representing IDREN from Universitas Gadjah Mada, spoke to the community context of the project. As a member of the IDREN network, he articulated the practical value of LLMNetOps from the perspective of the institutions it is designed to serve, and expressed the network’s support for wider adoption of the system.</p><p><strong>Prof. Andi Kurniawan, S.Pi., M.Eng., D.Sc.</strong>, Vice Rector for Planning, Cooperation, and Internationalization of Universitas Brawijaya, welcomed participants on behalf of the university and affirmed UB’s commitment to translating research outcomes into practical capacity-building programs that benefit the national academic community.</p><h3>Workshop Program</h3><p>The two-day program was designed as a fully hands-on experience. Participants did not only receive instruction; they built and operated their own local AI systems throughout the event.</p><ul><li><strong>Day 1</strong> focused on problem framing and system setup. The team walked participants through the real-world challenges of campus network management and introduced the LLMNetOps architecture. By end of day, each participant had a working local AI system installed and running on their own laptop.</li><li><strong>Day 2</strong> moved into applied practice. Participants used their configured systems to work through common network troubleshooting scenarios drawn from real campus environments. The day also included sessions on AI-based cybersecurity and broader generative AI applications for campus operations.</li></ul><h3>Participants</h3><p>The workshop brought together 40 participants from 24 institutions, covering a wide geographic spread, from Java, Sumatra, and Kalimantan to Sulawesi and Maluku. Participating institutions included, among others:</p><p>Universitas Gadjah Mada, Universitas Indonesia, Institut Teknologi Bandung, Universitas Padjadjaran, Universitas Hasanuddin, Universitas Sebelas Maret, Universitas Pendidikan Indonesia, Universitas Negeri Semarang, Universitas Sam Ratulangi, Universitas Sriwijaya, Universitas Syiah Kuala, Universitas Tanjungpura, Universitas Mulawarman, Universitas Pattimura, UIN Maulana Malik Ibrahim Malang, UIN Ar-Raniry Banda Aceh, Pusdatin Kemdiktisaintek, Universitas Negeri Malang, Universitas Kristen Petra, Universitas Muhammadiyah Malang, Institut Teknologi Kalimantan, Universitas Borneo Tarakan, Politeknik Negeri Malang, and Institut Asia Malang.</p><h3>Open Materials and Next Steps</h3><p>All workshop materials, technical guides, and the LLMNetOps system itself are openly available under a free license. Participants leave with everything needed to deploy the system at their home institutions, including hands-on experience from the workshop itself.</p><p>The project team will follow up with an online workshop series to support and monitor implementation progress at each participating institution. Institutions with sufficient technical capacity are encouraged to move directly to production deployment. The open-license materials also support train-the-trainer replication, enabling participants to run similar sessions for their own staff.</p><p>LLMNetOps is funded by ISIF Asia/APNIC Foundation 2025 (USD 30,000) and implemented by Universitas Brawijaya in collaboration with IDREN. Full materials and documentation are available at <a href=\"https://llmnetops.github.io\">llmnetops.github.io</a>.</p>",
+        "photos": [
+            {
+                "url": "images/gallery/day1-group-1.jpg",
+                "caption": "Participants of the LLMNetOps Main Workshop, Day 1"
+            },
+            {
+                "url": "images/gallery/day1-group-2.jpg",
+                "caption": "Participants of the LLMNetOps Main Workshop, Day 1"
+            },
+            {
+                "url": "images/gallery/day1-group-3.jpg",
+                "caption": "Participants of the LLMNetOps Main Workshop, Day 1"
+            },
+            {
+                "url": "images/media/prasetya-workshop.png",
+                "caption": "Participants setting up their local AI systems during the hands-on session"
+            }
+        ]
     }
 ]
