@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load news articles
 async function loadNews() {
     try {
-        const response = await fetch('data/news.json');
+        const response = await fetch('data/news.json', { cache: 'no-cache' });
         const newsData = await response.json();
         
         // Sort by date descending (newest first)
@@ -64,7 +64,7 @@ async function loadMedia() {
     const container = document.getElementById('media-container');
     if (!container) return;
     try {
-        const response = await fetch('data/media.json');
+        const response = await fetch('data/media.json', { cache: 'no-cache' });
         const media = await response.json();
         // Sort by date descending where available
         media.sort((a, b) => {

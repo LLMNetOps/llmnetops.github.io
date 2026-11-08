@@ -131,11 +131,12 @@ function animateProgressBars() {
 
 // Accordion animation
 function initAccordion() {
-    const accordionItems = document.querySelectorAll('.deliverable-card, .faq-item');
+    // Deliverable cards are handled by initDeliverableCards() in main.js.
+    const accordionItems = document.querySelectorAll('.faq-item');
     
     accordionItems.forEach(item => {
-        const header = item.querySelector('.deliverable-header, .faq-question');
-        const content = item.querySelector('.deliverable-content, .faq-answer');
+        const header = item.querySelector('.faq-question');
+        const content = item.querySelector('.faq-answer');
         
         if (header && content) {
             header.addEventListener('click', () => {
@@ -145,7 +146,7 @@ function initAccordion() {
                 accordionItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
-                        const otherContent = otherItem.querySelector('.deliverable-content, .faq-answer');
+                        const otherContent = otherItem.querySelector('.faq-answer');
                         if (otherContent) {
                             otherContent.style.maxHeight = null;
                         }

@@ -19,7 +19,7 @@ async function initNewsCards() {
     let own = [];
     let media = [];
     try {
-        const res = await fetch('data/news.json');
+        const res = await fetch('data/news.json', { cache: 'no-cache' });
         own = await res.json();
         own.sort((a, b) => new Date(b.date) - new Date(a.date));
     } catch (error) {
@@ -27,7 +27,7 @@ async function initNewsCards() {
     }
 
     try {
-        const res = await fetch('data/media.json');
+        const res = await fetch('data/media.json', { cache: 'no-cache' });
         media = await res.json();
         media.sort((a, b) => {
             if (!a.date && !b.date) return 0;
