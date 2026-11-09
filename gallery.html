@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galeri foto kegiatan LLMNetOps: dokumentasi workshop di Ijen Suites Resort &amp; Convention, Malang.">
+    <title>Galeri Foto - LLMNetOps</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        /* ── Gallery ── */
+        .gal-jump { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 0 0 2rem; }
+        .gal-jump a {
+            padding: 0.35rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        .gal-jump a:hover { border-color: var(--primary-color); color: var(--primary-color); }
+        .gal-section { scroll-margin-top: 90px; margin-bottom: 3rem; }
+        .gal-section:last-child { margin-bottom: 0; }
+        .gal-section h2 { font-size: 1.25rem; color: var(--secondary-color); margin: 0 0 0.25rem; }
+        .gal-date { color: var(--text-light); font-size: 0.9rem; margin: 0 0 1.25rem; }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem 1rem;
+        }
+        .gal-item { margin: 0; }
+        .gal-item button {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            padding: 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background: none;
+            cursor: zoom-in;
+        }
+        .gal-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gal-item button:hover img,
+        .gal-item button:focus-visible img { transform: scale(1.04); }
+        .gal-item figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: var(--text-light);
+        }
+
+        /* ── Lightbox ── */
+        .ws-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 5000;
+            background: rgba(0, 0, 0, 0.92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 3.5rem 1rem;
+        }
+        .ws-lightbox.open { display: flex; }
+        .ws-lightbox figure { margin: 0; max-width: 100%; max-height: 100%; text-align: center; }
+        .ws-lightbox img {
+            max-width: 100%;
+            max-height: calc(100vh - 9rem);
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+        .ws-lightbox figcaption { color: #ddd; font-size: 0.9rem; margin-top: 0.75rem; }
+        .ws-lightbox button {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: #fff;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .ws-lightbox button:hover { background: rgba(255, 255, 255, 0.25); }
+        .ws-lb-close { top: 1rem; right: 1rem; }
+        .ws-lb-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+        .ws-lb-next { right: 1rem; top: 50%; transform: translateY(-50%); }
+        @media (max-width: 640px) {
+            .ws-lb-prev, .ws-lb-next { top: auto; bottom: 1rem; transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/llmnetops-logo-formal.png" alt="LLMNetOps Logo">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li class="has-dropdown">
+                <a href="workshops.html">Workshops
+                    <svg class="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <ul class="nav-dropdown">
+                    <li><a href="workshops.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        Overview
+                    </a></li>
+                    <li><a href="pilot-test.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5a2 2 0 0 1-2-2V9m6 5h10a2 2 0 0 0 2-2V9m-6 9v3m0 0H9m3 0h3"/></svg>
+                        Pilot Test
+                    </a></li>
+                    <li><a href="gallery.html" class="active">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        Gallery
+                    </a></li>
+                    <li><a href="resources.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        Resources
+                    </a></li>
+                    <li><a href="register.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        Registration
+                    </a></li>
+                </ul>
+            </li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <a href="https://github.com/LLMNetOps" class="nav-github" target="_blank" rel="noopener noreferrer" aria-label="LLMNetOps on GitHub" title="LLMNetOps on GitHub">
+                <svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="workshops.html">Workshops</a>
+            <span>/</span>
+            <span>Galeri Foto</span>
+        </div>
+        <h1>Galeri Foto</h1>
+        <p>Dokumentasi kegiatan LLMNetOps &mdash; klik foto untuk memperbesar</p>
+    </section>
+
+    <section>
+        <div class="container">
+            <p class="gal-jump">
+                <a href="#hari-1">Hari 1</a>
+                <a href="#hari-2">Hari 2</a>
+            </p>
+
+            <!-- Day 1 -->
+            <div class="gal-section" id="hari-1">
+                <h2>Workshop Hari 1</h2>
+                <p class="gal-date">Jumat, 6 November 2026 &mdash; Ijen Suites Resort &amp; Convention, Malang</p>
+                <div class="gal-grid">
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Ballroom 3 yang telah ditata sebelum workshop dimulai">
+                        <img src="images/workshop-venue-ballroom3.jpg" alt="Ballroom 3 Ijen Suites Resort &amp; Convention yang telah ditata untuk Workshop LLMNetOps, dengan panggung, banner, dua layar proyektor, dan meja bundar peserta" width="1600" height="900" loading="lazy">
+                    </button>
+                    <figcaption>Ballroom 3 yang telah ditata sebelum workshop dimulai</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Workshop kit peserta: tumbler, tote bag, ID card &amp; lanyard, dan stiker">
+                        <img src="images/workshop-kit.jpg" alt="Workshop kit LLMNetOps: dua tumbler, tote bag, ID card dengan lanyard, dan stiker LLMNetOps" width="1600" height="900" loading="lazy">
+                    </button>
+                    <figcaption>Workshop kit peserta: tumbler, tote bag, ID card &amp; lanyard, dan stiker</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Sambutan Achmad Basuki, Ph.D., Project Leader LLMNetOps">
+                        <img src="images/gallery/day1-sambutan-basuki.jpg" alt="Achmad Basuki berbicara di podium, dengan dua narasumber duduk di meja panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Sambutan Achmad Basuki, Ph.D., Project Leader LLMNetOps</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Sambutan Dr. Didi Rustam, Pusdatin Kemendiktisaintek">
+                        <img src="images/gallery/day1-sambutan-didi.jpg" alt="Dr. Didi Rustam berbicara di podium, dengan namanya ditampilkan di layar panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Sambutan Dr. Didi Rustam, Pusdatin Kemendiktisaintek</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Sambutan Widyawan, Ph.D., IDREN">
+                        <img src="images/gallery/day1-sambutan-widyawan.jpg" alt="Widyawan berbicara di podium, dengan namanya ditampilkan di layar panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Sambutan Widyawan, Ph.D., IDREN</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Sambutan Wakil Rektor 4 UB">
+                        <img src="images/gallery/day1-panggung.jpg" alt="Wakil Rektor 4 UB memberikan sambutan di podium, dengan tiga narasumber duduk di meja panggung dan layar menampilkan progres kelompok peserta" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Sambutan Wakil Rektor 4 UB</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Foto bersama peserta, narasumber, dan panitia">
+                        <img src="images/gallery/day1-group-1.jpg" alt="Foto bersama peserta, narasumber, dan panitia Workshop LLMNetOps di depan panggung Ballroom 3 Ijen Suites" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Foto bersama peserta, narasumber, dan panitia</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Pose &ldquo;L&rdquo; untuk LLMNetOps">
+                        <img src="images/gallery/day1-group-3.jpg" alt="Peserta Workshop LLMNetOps berpose membentuk huruf L dengan tangan di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Pose &ldquo;L&rdquo; untuk LLMNetOps</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Wawancara dengan awak media seusai pembukaan">
+                        <img src="images/gallery/day1-wawancara.jpg" alt="Narasumber diwawancarai awak media dengan mikrofon, ponsel, dan kamera video" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Wawancara dengan awak media seusai pembukaan</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Dr. Achmad Basuki memaparkan gambaran umum proyek LLMNetOps">
+                        <img src="images/gallery/day1-project-overview.jpg" alt="Dr. Achmad Basuki berbicara memegang mikrofon, dengan slide Project Overview of LLMNetOps di layar" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Dr. Achmad Basuki memaparkan gambaran umum proyek LLMNetOps</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Pendampingan peserta saat sesi hands-on">
+                        <img src="images/gallery/day1-handson-1.jpg" alt="Pendamping berdiri di belakang dua peserta yang bekerja dengan laptop di meja kelompok" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Pendampingan peserta saat sesi hands-on</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Diskusi di meja kelompok saat sesi hands-on">
+                        <img src="images/gallery/day1-handson-2.jpg" alt="Pendamping mencondongkan badan ke laptop peserta dan berdiskusi di meja kelompok" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Diskusi di meja kelompok saat sesi hands-on</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Peserta mengerjakan hands-on di meja kelompok">
+                        <img src="images/gallery/day1-handson-3.jpg" alt="Empat orang bekerja dengan laptop di meja kelompok, salah satunya berdiri mencondongkan badan melihat layar" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Peserta mengerjakan hands-on di meja kelompok</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Tim pendamping membantu peserta di meja kelompok">
+                        <img src="images/gallery/day1-handson-4.jpg" alt="Dua pendamping membantu dua peserta yang bekerja dengan laptop di meja kelompok" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Tim pendamping membantu peserta di meja kelompok</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Sesi 3 Instalasi dan Aktivasi Infrastruktur LLM Lokal">
+                        <img src="images/gallery/day1-arsitektur.jpg" alt="Pemateri menjelaskan sambil memegang mikrofon, dengan slide Arsitektur End-to-End di UB di layar" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Sesi 3 Instalasi dan Aktivasi Infrastruktur LLM Lokal</figcaption>
+                </figure>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="gal-section" id="hari-2">
+                <h2>Workshop Hari 2</h2>
+                <p class="gal-date">Sabtu, 7 November 2026 &mdash; Ijen Suites Resort &amp; Convention, Malang</p>
+                <div class="gal-grid">
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Sesi 5 Studi Kasus Operasional Infrastruktur Jaringan">
+                        <img src="images/gallery/day2-sesi-pagi.jpg" alt="Pemateri berbicara memegang mikrofon di depan peserta yang duduk di meja kelompok dengan laptop" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Sesi 5 Studi Kasus Operasional Infrastruktur Jaringan</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Sesi 6 Studi Kasus Operasional Infrastruktur Jaringan Bagian 2">
+                        <img src="images/gallery/day2-handson.jpg" alt="Pendamping membantu dua peserta yang bekerja dengan laptop di meja kelompok, dengan peserta lain di meja-meja belakang" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Sesi 6 Studi Kasus Operasional Infrastruktur Jaringan Bagian 2</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: AI for Cyber Security">
+                        <img src="images/gallery/day2-security-onion.jpg" alt="Pemateri berbicara memegang mikrofon, dengan slide Kapabilitas Security Onion di layar" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>AI for Cyber Security</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Implementasi AI Generative di lingkungan kampus">
+                        <img src="images/gallery/day2-genai.jpg" alt="Pemateri berdiri memegang mikrofon, dengan grafik penggunaan generative AI oleh mahasiswa di layar" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Implementasi AI Generative di lingkungan kampus</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-1.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-2.jpg" alt="Peserta lain berjabat tangan dan menerima sertifikat penyelesaian workshop, disaksikan peserta dan panitia" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-3.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-4.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-5.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-6.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-7.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-8.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-9.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Penyerahan sertifikat kepada peserta">
+                        <img src="images/gallery/day2-sertifikat-10.jpg" alt="Peserta berjabat tangan dan menerima sertifikat penyelesaian workshop di depan panggung" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Penyerahan sertifikat kepada peserta</figcaption>
+                </figure>
+                <figure class="gal-item">
+                    <button type="button" aria-label="Perbesar foto: Foto bersama dengan sertifikat di akhir workshop">
+                        <img src="images/gallery/day2-foto-bersama.jpg" alt="Peserta, narasumber, dan panitia berfoto bersama di depan panggung sambil memegang sertifikat" width="1600" height="1200" loading="lazy">
+                    </button>
+                    <figcaption>Foto bersama dengan sertifikat di akhir workshop</figcaption>
+                </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="ws-lightbox" id="wsLightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto" hidden>
+        <button type="button" class="ws-lb-close" aria-label="Tutup">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <button type="button" class="ws-lb-prev" aria-label="Foto sebelumnya">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <figure>
+            <img src="" alt="">
+            <figcaption></figcaption>
+        </figure>
+        <button type="button" class="ws-lb-next" aria-label="Foto berikutnya">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LLMNetOps</h4>
+                <p>Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI</p>
+                <p><a href="https://apnic.foundation/projects/llmnetops/" target="_blank">View Project on APNIC Foundation</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li class="has-dropdown">
+                <a href="workshops.html">Workshops
+                    <svg class="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <ul class="nav-dropdown">
+                    <li><a href="workshops.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        Overview
+                    </a></li>
+                    <li><a href="pilot-test.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5a2 2 0 0 1-2-2V9m6 5h10a2 2 0 0 0 2-2V9m-6 9v3m0 0H9m3 0h3"/></svg>
+                        Pilot Test
+                    </a></li>
+                    <li><a href="gallery.html" class="active">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        Gallery
+                    </a></li>
+                    <li><a href="resources.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        Resources
+                    </a></li>
+                    <li><a href="register.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        Registration
+                    </a></li>
+                </ul>
+            </li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:llmnetops@ub.ac.id">llmnetops@ub.ac.id</a></li>
+                    <li>Universitas Brawijaya</li>
+                    <li>Malang, East Java, Indonesia</li>
+                    <li><a href="https://ub.ac.id" target="_blank" rel="noopener noreferrer">ub.ac.id</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Funded By</h4>
+                <div class="partner-logos">
+                    <img src="images/APNIC-Foundation-and-ISIF-Logo-white-stacked-01.svg" alt="APNIC Foundation and ISIF Asia">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Implemented By</h4>
+                <div class="partner-logos">
+                    <img src="images/Logo_Universitas_Brawijaya.png" alt="Universitas Brawijaya">
+                    <img src="images/logo-idren.png" alt="IDREN">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2024</span> LLMNetOps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    (function () {
+        var lb = document.getElementById('wsLightbox');
+        var lbImg = lb.querySelector('img');
+        var lbCap = lb.querySelector('figcaption');
+        var items = [], current = 0, lastFocus = null;
+
+        function show(i) {
+            current = (i + items.length) % items.length;
+            var img = items[current].querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbCap.textContent = items[current].querySelector('figcaption').textContent;
+        }
+        function open(list, i) {
+            items = list;
+            lastFocus = document.activeElement;
+            show(i);
+            lb.hidden = false;
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            lb.querySelector('.ws-lb-close').focus();
+        }
+        function close() {
+            lb.classList.remove('open');
+            lb.hidden = true;
+            document.body.style.overflow = '';
+            if (lastFocus) lastFocus.focus();
+        }
+
+        // Each section browses its own photos
+        document.querySelectorAll('.gal-grid').forEach(function (grid) {
+            var list = Array.prototype.slice.call(grid.querySelectorAll('.gal-item'));
+            list.forEach(function (it, i) {
+                it.querySelector('button').addEventListener('click', function () { open(list, i); });
+            });
+        });
+
+        lb.querySelector('.ws-lb-close').addEventListener('click', close);
+        lb.querySelector('.ws-lb-prev').addEventListener('click', function () { show(current - 1); });
+        lb.querySelector('.ws-lb-next').addEventListener('click', function () { show(current + 1); });
+        lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+        document.addEventListener('keydown', function (e) {
+            if (lb.hidden) return;
+            if (e.key === 'Escape') close();
+            else if (e.key === 'ArrowLeft') show(current - 1);
+            else if (e.key === 'ArrowRight') show(current + 1);
+        });
+
+        // Swipe on touch devices
+        var startX = null;
+        lb.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+        lb.addEventListener('touchend', function (e) {
+            if (startX === null) return;
+            var dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+            startX = null;
+        });
+    })();
+    </script>
+</body>
+</html>
