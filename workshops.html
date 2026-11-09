@@ -116,113 +116,31 @@
         }
         .ws-venue-btn:hover { opacity: 0.9; }
 
-        /* ── Photos ── */
-        .ws-photo { margin: 0 0 2.5rem; }
-        .ws-photo img {
+        /* ── Photo preview ── */
+        .ws-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .ws-preview-grid a {
             display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-        .ws-photo figcaption {
-            margin-top: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-light);
-            text-align: center;
-        }
-        .ws-info-grid + .ws-photo { margin-top: 2rem; margin-bottom: 0; }
-
-        /* ── Photo gallery ── */
-        .ws-gallery-day { margin-bottom: 2.5rem; }
-        .ws-gallery-day:last-child { margin-bottom: 0; }
-        .ws-gallery-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 0.75rem;
-        }
-        .ws-gallery-head h3 { font-size: 1.05rem; color: var(--secondary-color); margin: 0; }
-        .ws-gallery-nav { display: flex; gap: 0.5rem; }
-        .ws-gallery-nav button {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            border: 1px solid var(--border-color);
-            background: #fff;
-            color: var(--secondary-color);
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .ws-gallery-nav button:hover { border-color: var(--primary-color); color: var(--primary-color); }
-        .ws-gallery-track {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            align-items: flex-start;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            padding-bottom: 0.75rem;
-            -webkit-overflow-scrolling: touch;
-        }
-        .ws-gallery-item {
-            flex: 0 0 min(320px, 80%);
-            aspect-ratio: 1 / 1;
-            scroll-snap-align: start;
-            padding: 0;
+            aspect-ratio: 4 / 3;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
-            background: none;
-            cursor: zoom-in;
         }
-        .ws-gallery-item img {
+        .ws-preview-grid img {
             display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        .ws-gallery-item:hover img,
-        .ws-gallery-item:focus-visible img { transform: scale(1.04); }
-
-        /* ── Lightbox ── */
-        .ws-lightbox {
-            position: fixed;
-            inset: 0;
-            z-index: 5000;
-            background: rgba(0, 0, 0, 0.92);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 3.5rem 1rem;
-        }
-        .ws-lightbox.open { display: flex; }
-        .ws-lightbox figure { margin: 0; max-width: 100%; max-height: 100%; text-align: center; }
-        .ws-lightbox img {
-            max-width: 100%;
-            max-height: calc(100vh - 9rem);
-            border-radius: 6px;
-            display: block;
-            margin: 0 auto;
-        }
-        .ws-lightbox figcaption { color: #ddd; font-size: 0.9rem; margin-top: 0.75rem; }
-        .ws-lightbox button {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.12);
-            border: none;
-            color: #fff;
-            width: 44px; height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .ws-lightbox button:hover { background: rgba(255, 255, 255, 0.25); }
-        .ws-lb-close { top: 1rem; right: 1rem; }
-        .ws-lb-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
-        .ws-lb-next { right: 1rem; top: 50%; transform: translateY(-50%); }
-        @media (max-width: 640px) {
-            .ws-lb-prev, .ws-lb-next { top: auto; bottom: 1rem; transform: none; }
+        .ws-preview-grid a:hover img,
+        .ws-preview-grid a:focus-visible img { transform: scale(1.04); }
+        .ws-preview-more { text-align: center; margin-top: 1.5rem; }
+        @media (max-width: 768px) {
+            .ws-preview-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* ── Rundown table ── */
@@ -355,6 +273,10 @@
                         <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5a2 2 0 0 1-2-2V9m6 5h10a2 2 0 0 0 2-2V9m-6 9v3m0 0H9m3 0h3"/></svg>
                         Pilot Test
                     </a></li>
+                    <li><a href="gallery.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        Gallery
+                    </a></li>
                     <li><a href="resources.html">
                         <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         Resources
@@ -384,6 +306,23 @@
         <p>Hands-on Training on Privacy-Aware LLM Deployment for Network Operations</p>
     </section>
 
+    <!-- Photo preview -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Dokumentasi Kegiatan</h2>
+            <p class="section-subtitle">Cuplikan Workshop LLMNetOps di Ijen Suites Resort &amp; Convention, Malang</p>
+            <div class="ws-preview-grid">
+                <a href="gallery.html#hari-1"><img src="images/gallery/day1-group-1.jpg" alt="Foto bersama peserta, narasumber, dan panitia Workshop LLMNetOps di Ballroom 3 Ijen Suites" width="1600" height="1200" loading="lazy"></a>
+                <a href="gallery.html#hari-1"><img src="images/gallery/day1-project-overview.jpg" alt="Dr. Achmad Basuki memaparkan gambaran umum proyek LLMNetOps" width="1600" height="1200" loading="lazy"></a>
+                <a href="gallery.html#hari-1"><img src="images/gallery/day1-handson-1.jpg" alt="Peserta didampingi saat sesi hands-on di meja kelompok" width="1600" height="1200" loading="lazy"></a>
+                <a href="gallery.html#hari-2"><img src="images/gallery/day2-foto-bersama.jpg" alt="Peserta, narasumber, dan panitia berfoto bersama sambil memegang sertifikat di akhir workshop" width="1600" height="1200" loading="lazy"></a>
+            </div>
+            <div class="ws-preview-more">
+                <a href="gallery.html" class="btn btn-primary">Lihat semua foto</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Workshop Sessions / Rundown -->
     <section class="about">
         <div class="container">
@@ -405,11 +344,6 @@
                     Buka di Google Maps
                 </a>
             </div>
-
-            <figure class="ws-photo">
-                <img src="images/workshop-venue-ballroom3.jpg" alt="Ballroom 3 Ijen Suites Resort &amp; Convention yang telah ditata untuk Workshop LLMNetOps, dengan panggung, banner, dua layar proyektor, dan meja bundar peserta" width="1600" height="900" loading="lazy">
-                <figcaption>Ballroom 3, Lantai 1 — Ijen Suites Resort &amp; Convention, Malang</figcaption>
-            </figure>
 
             <!-- Day 1 -->
             <div class="rundown-section">
@@ -516,57 +450,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Photo Gallery -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Galeri Foto</h2>
-            <p class="section-subtitle">Dokumentasi kegiatan Workshop LLMNetOps — klik foto untuk memperbesar</p>
-
-            <!-- Day 1 -->
-            <div class="ws-gallery-day">
-                <div class="ws-gallery-head">
-                    <h3>Hari 1 — Jumat, 6 November 2026</h3>
-                    <div class="ws-gallery-nav">
-                        <button type="button" data-dir="-1" aria-label="Foto sebelumnya">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-                        </button>
-                        <button type="button" data-dir="1" aria-label="Foto berikutnya">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="ws-gallery-track">
-                    <button type="button" class="ws-gallery-item" data-caption="Foto bersama peserta, narasumber, dan panitia Workshop LLMNetOps — Hari 1">
-                        <img src="images/gallery/day1-group-1.jpg" alt="Foto bersama peserta, narasumber, dan panitia Workshop LLMNetOps di depan panggung Ballroom 3 Ijen Suites" width="1600" height="1200" loading="lazy">
-                    </button>
-                    <button type="button" class="ws-gallery-item" data-caption="Foto bersama peserta, narasumber, dan panitia Workshop LLMNetOps — Hari 1">
-                        <img src="images/gallery/day1-group-2.jpg" alt="Foto bersama seluruh peserta Workshop LLMNetOps di Ballroom 3 Ijen Suites" width="1600" height="1200" loading="lazy">
-                    </button>
-                    <button type="button" class="ws-gallery-item" data-caption="Pose &ldquo;L&rdquo; untuk LLMNetOps — Hari 1">
-                        <img src="images/gallery/day1-group-3.jpg" alt="Peserta Workshop LLMNetOps berpose membentuk huruf L dengan tangan di depan panggung" width="1600" height="1200" loading="lazy">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="ws-lightbox" id="wsLightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto" hidden>
-        <button type="button" class="ws-lb-close" aria-label="Tutup">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-        <button type="button" class="ws-lb-prev" aria-label="Foto sebelumnya">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <figure>
-            <img src="" alt="">
-            <figcaption></figcaption>
-        </figure>
-        <button type="button" class="ws-lb-next" aria-label="Foto berikutnya">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-    </div>
 
     <!-- Session Details (hidden temporarily) -->
     <!-- <section class="about">
@@ -700,11 +583,6 @@
                     <dd>Completion certificate from Universitas Brawijaya for participants attending both sessions</dd>
                 </div>
             </dl>
-
-            <figure class="ws-photo">
-                <img src="images/workshop-kit.jpg" alt="LLMNetOps workshop kit: two tumblers, a tote bag, participant ID card with lanyard, and LLMNetOps stickers" width="1600" height="900" loading="lazy">
-                <figcaption>Every participant receives an LLMNetOps workshop kit — tumbler, tote bag, ID card &amp; lanyard, and stickers.</figcaption>
-            </figure>
         </div>
     </section>
 
@@ -794,6 +672,10 @@
                         <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5a2 2 0 0 1-2-2V9m6 5h10a2 2 0 0 0 2-2V9m-6 9v3m0 0H9m3 0h3"/></svg>
                         Pilot Test
                     </a></li>
+                    <li><a href="gallery.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        Gallery
+                    </a></li>
                     <li><a href="resources.html">
                         <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         Resources
@@ -842,78 +724,5 @@
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
-    <script>
-    (function () {
-        // Scroll buttons per day
-        document.querySelectorAll('.ws-gallery-day').forEach(function (day) {
-            var track = day.querySelector('.ws-gallery-track');
-            day.querySelectorAll('.ws-gallery-nav button').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    var item = track.querySelector('.ws-gallery-item');
-                    var step = item ? item.offsetWidth + 16 : track.clientWidth;
-                    track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
-                });
-            });
-        });
-
-        // Lightbox
-        var lb = document.getElementById('wsLightbox');
-        if (!lb) return;
-        var lbImg = lb.querySelector('img');
-        var lbCap = lb.querySelector('figcaption');
-        var items = [], current = 0, lastFocus = null;
-
-        function show(i) {
-            current = (i + items.length) % items.length;
-            var it = items[current], img = it.querySelector('img');
-            lbImg.src = img.src;
-            lbImg.alt = img.alt;
-            lbCap.textContent = it.dataset.caption || img.alt;
-        }
-        function open(list, i) {
-            items = list;
-            lastFocus = document.activeElement;
-            show(i);
-            lb.hidden = false;
-            lb.classList.add('open');
-            document.body.style.overflow = 'hidden';
-            lb.querySelector('.ws-lb-close').focus();
-        }
-        function close() {
-            lb.classList.remove('open');
-            lb.hidden = true;
-            document.body.style.overflow = '';
-            if (lastFocus) lastFocus.focus();
-        }
-
-        document.querySelectorAll('.ws-gallery-track').forEach(function (track) {
-            var list = Array.prototype.slice.call(track.querySelectorAll('.ws-gallery-item'));
-            list.forEach(function (it, i) {
-                it.addEventListener('click', function () { open(list, i); });
-            });
-        });
-
-        lb.querySelector('.ws-lb-close').addEventListener('click', close);
-        lb.querySelector('.ws-lb-prev').addEventListener('click', function () { show(current - 1); });
-        lb.querySelector('.ws-lb-next').addEventListener('click', function () { show(current + 1); });
-        lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
-        document.addEventListener('keydown', function (e) {
-            if (lb.hidden) return;
-            if (e.key === 'Escape') close();
-            else if (e.key === 'ArrowLeft') show(current - 1);
-            else if (e.key === 'ArrowRight') show(current + 1);
-        });
-
-        // Swipe on touch devices
-        var startX = null;
-        lb.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
-        lb.addEventListener('touchend', function (e) {
-            if (startX === null) return;
-            var dx = e.changedTouches[0].clientX - startX;
-            if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
-            startX = null;
-        });
-    })();
-    </script>
 </body>
 </html>
