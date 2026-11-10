@@ -1,5 +1,21 @@
 [
     {
+        "title": "Jaga Keamanan Data, UB Kembangkan AI Lokal untuk Kelola Jaringan Kampus",
+        "source": "Malang Posco Media",
+        "date": "2026-11-08",
+        "url": "https://malangposcomedia.id/jaga-keamanan-data-ub-kembangkan-ai-lokal-untuk-kelola-jaringan-kampus/",
+        "image": "images/media/malang-posco-workshop.webp",
+        "summary": "Universitas Brawijaya mengembangkan AI generatif berbasis lokal untuk meningkatkan keamanan dan efisiensi pengelolaan jaringan kampus, diperkenalkan melalui Workshop LLMNetOps bersama IDREN di Hotel Ijen Suites Malang."
+    },
+    {
+        "title": "UB Kembangkan LLMNetOps, Perkuat Keamanan Jaringan Kampus Berbasis AI Lokal",
+        "source": "Kanal24",
+        "date": "2026-11-06",
+        "url": "https://kanal24.co.id/ub-kembangkan-llmnetops-perkuat-keamanan-jaringan-kampus-ai-lokal/",
+        "image": "images/media/kanal24-workshop.jpeg",
+        "summary": "Universitas Brawijaya mendorong pengembangan LLMNetOps agar kampus dapat memanfaatkan AI untuk operasional dan keamanan jaringan tanpa mengirim data sensitif institusi ke layanan AI publik."
+    },
+    {
         "title": "DTI UB dan IDREN Kembangkan AI Lokal untuk Pengelolaan Jaringan Kampus",
         "source": "Universitas Brawijaya News",
         "date": "2026-11-06",

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Materi workshop LLMNetOps — Sesi 7: AI for Cyber Security">
+    <title>Sesi 7 - Materi Workshop - LLMNetOps</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/materi.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/llmnetops-logo-formal.png" alt="LLMNetOps Logo">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li class="has-dropdown">
+                <a href="workshops.html">Workshops
+                    <svg class="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <ul class="nav-dropdown">
+                    <li><a href="workshops.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        Overview
+                    </a></li>
+                    <li><a href="pilot-test.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5a2 2 0 0 1-2-2V9m6 5h10a2 2 0 0 0 2-2V9m-6 9v3m0 0H9m3 0h3"/></svg>
+                        Pilot Test
+                    </a></li>
+                    <li><a href="gallery.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        Gallery
+                    </a></li>
+                    <li><a href="resources.html" class="active">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        Resources
+                    </a></li>
+                    <li><a href="register.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        Registration
+                    </a></li>
+                </ul>
+            </li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <a href="https://github.com/LLMNetOps" class="nav-github" target="_blank" rel="noopener noreferrer" aria-label="LLMNetOps on GitHub" title="LLMNetOps on GitHub">
+                <svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="resources.html">Resources</a>
+            <span>/</span>
+            <span>Sesi 7</span>
+        </div>
+        <h1>Sesi 7: AI for Cyber Security</h1>
+        <p>Pemanfaatan AI untuk keamanan jaringan kampus, serta cara menjaga AI agent itu sendiri tetap aman.</p>
+    </section>
+
+    <!-- Session Material -->
+    <section>
+        <div class="container">
+            <div class="materi-info">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Hari 2 — Sabtu, 7 November 2026</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 13.00–13.50</span>
+            </div>
+
+            <div class="card materi-summary">
+                <h3>Cakupan Materi</h3>
+                <ul class="topic-list">
+                    <li>Keamanan jaringan kampus: firewall, hardening, dan analisis log</li>
+                    <li>Demo Pamugas</li>
+                    <li>Keamanan AI agent: akses read-only &amp; prompt injection</li>
+                </ul>
+            </div>
+
+            <!-- Isi src di bawah dengan URL Google Docs:
+                 - tampilan per halaman: https://docs.google.com/document/d/<ID>/preview (dokumen di-share "Anyone with the link")
+                 - tampilan web: URL "Publish to web" (…/pub?embedded=true) -->
+            <div class="doc-viewer">
+                <div class="doc-viewer-bar">
+                    <span class="doc-viewer-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Slide Materi — Sesi 7</span>
+                    <span class="doc-viewer-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg> Gunakan tombol panah untuk berpindah slide</span>
+                </div>
+                <div class="doc-viewer-body">
+                    <div class="doc-embed is-slides">
+                        <iframe src="https://docs.google.com/presentation/d/1W2AtMjsggzX63froFytfmDsAUxE3wa9NcA5JX4CEajI/embed?start=false&amp;loop=false&amp;delayms=3000" title="Materi Sesi 7" loading="lazy" allowfullscreen></iframe>
+                        <div class="doc-placeholder">
+                            <strong>Materi segera tersedia</strong>
+                            Slide materi Sesi 7 akan ditampilkan di sini.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="materi-pager" role="navigation" aria-label="Navigasi sesi">
+                <a href="materi-sesi-6.html" class="prev"><small>← Sebelumnya</small>Sesi 6</a>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LLMNetOps</h4>
+                <p>Strengthening Network Operations Knowledge-Base through Locally-Hosted Generative AI</p>
+                <p><a href="https://apnic.foundation/projects/llmnetops/" target="_blank">View Project on APNIC Foundation</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li class="has-dropdown">
+                <a href="workshops.html">Workshops
+                    <svg class="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </a>
+                <ul class="nav-dropdown">
+                    <li><a href="workshops.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        Overview
+                    </a></li>
+                    <li><a href="pilot-test.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5a2 2 0 0 1-2-2V9m6 5h10a2 2 0 0 0 2-2V9m-6 9v3m0 0H9m3 0h3"/></svg>
+                        Pilot Test
+                    </a></li>
+                    <li><a href="gallery.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        Gallery
+                    </a></li>
+                    <li><a href="resources.html" class="active">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        Resources
+                    </a></li>
+                    <li><a href="register.html">
+                        <svg class="nav-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        Registration
+                    </a></li>
+                </ul>
+            </li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:llmnetops@ub.ac.id">llmnetops@ub.ac.id</a></li>
+                    <li>Universitas Brawijaya</li>
+                    <li>Malang, East Java, Indonesia</li>
+                    <li><a href="https://ub.ac.id" target="_blank" rel="noopener noreferrer">ub.ac.id</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Funded By</h4>
+                <div class="partner-logos">
+                    <img src="images/APNIC-Foundation-and-ISIF-Logo-white-stacked-01.svg" alt="APNIC Foundation and ISIF Asia">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Implemented By</h4>
+                <div class="partner-logos">
+                    <img src="images/Logo_Universitas_Brawijaya.png" alt="Universitas Brawijaya">
+                    <img src="images/logo-idren.png" alt="IDREN">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2024</span> LLMNetOps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Show the embedded doc once its URL is filled in; otherwise show a placeholder.
+        document.querySelectorAll('.doc-embed').forEach(function (box) {
+            var frame = box.querySelector('iframe');
+            var src = frame ? (frame.getAttribute('src') || '').trim() : '';
+            if (src) {
+                box.querySelector('.doc-placeholder').remove();
+                box.classList.add('has-doc');
+                // Loading overlay until the document has loaded (or after 20s at most).
+                var loader = document.createElement('div');
+                loader.className = 'doc-loader';
+                loader.setAttribute('role', 'status');
+                loader.innerHTML = '<span class="doc-loader-spinner" aria-hidden="true"></span>Memuat dokumen…';
+                box.appendChild(loader);
+                var hideLoader = function () {
+                    if (!loader.parentNode) return;
+                    loader.classList.add('is-hidden');
+                    setTimeout(function () { loader.remove(); }, 400);
+                };
+                frame.addEventListener('load', hideLoader);
+                setTimeout(hideLoader, 20000);
+                // A /preview or /embed URL is Google's own viewer: it is responsive, so no scaling.
+                if (/\/(preview|embed)(\?|$)/.test(src)) return;
+                // Google Docs pages are ~816px wide: scale the frame up so the page fills the box.
+                var DOC_WIDTH = 816;
+                var fit = function () {
+                    var scale = Math.max(1, box.clientWidth / DOC_WIDTH);
+                    frame.style.width = (box.clientWidth / scale) + 'px';
+                    frame.style.height = (box.clientHeight / scale) + 'px';
+                    frame.style.transform = scale > 1 ? 'scale(' + scale + ')' : '';
+                };
+                fit();
+                window.addEventListener('resize', fit);
+            } else if (frame) {
+                frame.remove();
+            }
+        });
+    </script>
+</body>
+</html>
