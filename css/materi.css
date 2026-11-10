@@ -189,3 +189,14 @@
     .doc-viewer-body { padding: 0.5rem; }
     .doc-viewer-hint { display: none; }
 }
+
+/* Google Slides embed: fixed 16:9 frame instead of the tall, scrolling document box. */
+.doc-embed.is-slides.has-doc {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+}
+.doc-embed.is-slides.has-doc::after { display: none; }
+@media (max-width: 640px) {
+    .doc-embed.is-slides.has-doc { height: auto; min-height: 0; }
+}
