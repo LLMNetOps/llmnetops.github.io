@@ -1329,6 +1329,126 @@ footer {
     padding-right: 0;
 }
 
+/* Featured video */
+.home-video {
+    background: var(--white);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.home-video-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.home-video-text h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.home-video-text p {
+    margin-bottom: 1.25rem;
+}
+
+.video-embed {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: var(--shadow-lg);
+}
+
+.video-embed iframe,
+.video-facade,
+.video-facade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-facade {
+    display: block;
+    cursor: pointer;
+}
+
+.video-facade img {
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.video-facade:hover img,
+.video-facade:focus-visible img {
+    transform: scale(1.03);
+    filter: brightness(0.85);
+}
+
+.video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.video-play::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 13px 0 13px 22px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.video-facade:hover .video-play,
+.video-facade:focus-visible .video-play {
+    background: var(--primary-dark);
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 900px) {
+    .home-video-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-video-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .video-play {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 /* About + at a glance */
 .home-about {
     background: var(--light-bg);
