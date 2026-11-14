@@ -183,3 +183,20 @@ window.LLMNetOps = {
     animateCounter,
     initCounters
 };
+
+// Click-to-load YouTube embeds: show a thumbnail first and load the
+// privacy-enhanced (youtube-nocookie) player only when the visitor clicks.
+document.querySelectorAll('.video-facade').forEach(facade => {
+    facade.addEventListener('click', event => {
+        event.preventDefault();
+        const id = facade.dataset.videoId;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+        iframe.title = facade.dataset.videoTitle || 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        facade.replaceWith(iframe);
+        iframe.focus();
+    });
+});
